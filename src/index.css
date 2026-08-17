@@ -1,0 +1,228 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-chitkala-red: #e34234;
+  --color-chitkala-dark-red: #a71714;
+  --color-chitkala-gray: #d9d9d9;
+  --font-cabinet: 'Cabinet Grotesk', system-ui, sans-serif;
+  --font-inter: 'Inter', system-ui, sans-serif;
+}
+
+:root {
+  --scale-factor: 0.7;
+  --tag-height: 64px;
+  --tag-radius: 20px;
+  --tag-font-size: 24px;
+  --tag-padding: 24px;
+  --filter-gap: 24px;
+  --card-scale: 1;
+}
+
+@media (max-width: 1919px) {
+  :root {
+    --scale-factor: 0.6;
+    --tag-height: 56px;
+    --tag-radius: 18px;
+    --tag-font-size: 20px;
+    --tag-padding: 20px;
+    --filter-gap: 20px;
+    --card-scale: 0.9;
+  }
+}
+
+@media (max-width: 1599px) {
+  :root {
+    --scale-factor: 0.5;
+    --tag-height: 48px;
+    --tag-radius: 16px;
+    --tag-font-size: 18px;
+    --tag-padding: 16px;
+    --filter-gap: 16px;
+    --card-scale: 0.8;
+  }
+}
+
+@media (max-width: 1365px) {
+  :root {
+    --scale-factor: 0.45;
+    --tag-height: 42px;
+    --tag-radius: 14px;
+    --tag-font-size: 16px;
+    --tag-padding: 12px;
+    --filter-gap: 12px;
+    --card-scale: 0.7;
+  }
+}
+
+@media (max-width: 1023px) {
+  :root {
+    --scale-factor: 0.4;
+    --tag-height: 38px;
+    --tag-radius: 12px;
+    --tag-font-size: 14px;
+    --tag-padding: 10px;
+    --filter-gap: 10px;
+    --card-scale: 0.6;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-cabinet);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  min-height: 100svh;
+}
+
+.responsive-footer-logo {
+  width: 300px;
+  height: 100px;
+  margin-top: 30px;
+}
+
+/* Desktop-first layout matching Figma frame 1920px */
+@media (max-width: 1279px) {
+  .responsive-nav {
+    padding-left: 40px !important;
+    padding-right: 40px !important;
+  }
+
+  .responsive-filter-tag {
+    width: auto !important;
+  }
+}
+
+@media (max-width: 1023px) {
+  .responsive-nav {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  .responsive-grid {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  .responsive-footer {
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .responsive-filter {
+    overflow-x: auto;
+    flex-wrap: nowrap !important;
+    padding-bottom: 8px;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .responsive-filter::-webkit-scrollbar {
+    display: none;
+  }
+
+  .responsive-project-header h3 {
+    font-size: 24px !important;
+  }
+
+  .responsive-project-header p,
+  .responsive-project-header span {
+    font-size: 16px !important;
+  }
+
+  .responsive-project-header {
+    height: auto !important;
+    min-height: 100px;
+    padding-top: 16px !important;
+    padding-bottom: 16px !important;
+  }
+
+  .responsive-project-image {
+    height: 280px !important;
+  }
+
+  .responsive-filter-tag {
+    height: 56px !important;
+    font-size: 18px !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  .responsive-footer-logo {
+    width: 240px !important;
+    height: auto !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1279px) {
+  .responsive-filter-tag {
+    height: 72px !important;
+    font-size: 28px !important;
+  }
+
+  .responsive-project-header h3 {
+    font-size: 30px !important;
+  }
+
+  .responsive-project-header p,
+  .responsive-project-header span {
+    font-size: 20px !important;
+  }
+
+  .responsive-project-image {
+    height: 360px !important;
+  }
+}
+
+/* Reusable Project Card Layout Hover Transitions */
+.portfolio-card {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background-color: var(--color-chitkala-gray);
+  box-shadow: none;
+  height: 280px;
+}
+
+@media (min-width: 768px) {
+  .portfolio-card {
+    height: calc(670px * var(--card-scale, 1));
+  }
+}
+
+.project-title,
+.project-services,
+.project-year {
+  color: var(--color-chitkala-dark-red);
+  transition: color 700ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.portfolio-card.is-hovered .project-title,
+.portfolio-card.is-hovered .project-services,
+.portfolio-card.is-hovered .project-year {
+  color: #fcfbf7;
+}
+
+.project-details,
+.project-year {
+  transition: transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.portfolio-card.is-hovered .project-details,
+.portfolio-card.is-hovered .project-year {
+  transform: translateY(8px);
+}
