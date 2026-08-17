@@ -17,8 +17,11 @@ export function ProjectCard({
   const radiusPx = `${radius}px`
 
   return (
-    <article
-      className={`portfolio-card relative w-full overflow-hidden transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] ${isHovered ? 'is-hovered' : ''}`}
+    <a
+      href="https://www.bemotionlabs.com/"
+      target="_blank"
+      rel="noopener noreferrer"
+      className={`portfolio-card relative w-full overflow-hidden block transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] ${isHovered ? 'is-hovered' : ''}`}
       style={{ borderRadius: radiusPx }}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
@@ -121,6 +124,6 @@ export function ProjectCard({
           <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
         </svg>
       </div>
-    </article>
+    </a>
   )
 }
