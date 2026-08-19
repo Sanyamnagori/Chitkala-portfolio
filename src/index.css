@@ -200,7 +200,7 @@ body {
 
 @media (min-width: 768px) {
   .portfolio-card {
-    height: calc(670px * var(--card-scale, 1));
+    height: calc(520px * var(--card-scale, 1));
   }
 }
 

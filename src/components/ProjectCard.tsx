@@ -39,7 +39,7 @@ export function ProjectCard({
       <div
         className="portfolio-card-header absolute top-0 left-0 w-full z-20 flex justify-between items-start transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]"
         style={{
-          height: isHovered ? '100%' : 'calc(180px * var(--card-scale, 1))',
+          height: isHovered ? '100%' : 'calc(120px * var(--card-scale, 1))',
           backgroundColor: isHovered ? 'transparent' : 'white',
           padding: isHovered ? '2.5rem' : '20px 24px',
           borderTopLeftRadius: radiusPx,
@@ -82,8 +82,8 @@ export function ProjectCard({
       <div
         className="portfolio-card-image absolute left-0 w-full z-10 overflow-hidden transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]"
         style={{
-          top: isHovered ? 0 : 'calc(180px * var(--card-scale, 1))',
-          height: isHovered ? '100%' : 'calc(490px * var(--card-scale, 1))',
+          top: isHovered ? 0 : 'calc(120px * var(--card-scale, 1))',
+          height: isHovered ? '100%' : 'calc(400px * var(--card-scale, 1))',
           borderBottomLeftRadius: radiusPx,
           borderBottomRightRadius: isHovered ? 0 : radiusPx,
           borderTopLeftRadius: isHovered ? radiusPx : 0,
