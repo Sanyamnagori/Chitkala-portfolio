@@ -12,10 +12,10 @@ export function ProjectGrid() {
   }
 
   return (
-    <section id="work" className="w-full xl:px-[80px]" style={{ paddingTop: '60px' }}>
+    <section id="work" className="w-full xl:px-[40px]" style={{ paddingTop: '40px' }}>
       <div
-        className="mx-auto flex max-w-[1760px] flex-col gap-5"
-        style={{ paddingLeft: '44px', paddingRight: '44px' }}
+        className="mx-auto flex max-w-[1400px] flex-col gap-4"
+        style={{ paddingLeft: '24px', paddingRight: '24px' }}
       >
         {pairs.map((pair, rowIndex) => (
           <div

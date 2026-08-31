@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import type { Project } from '../data/projects'
 
 interface ProjectCardProps {
@@ -17,10 +18,8 @@ export function ProjectCard({
   const radiusPx = `${radius}px`
 
   return (
-    <a
-      href="https://www.bemotionlabs.com/"
-      target="_blank"
-      rel="noopener noreferrer"
+    <Link
+      to={`/project/${project.id}`}
       className={`portfolio-card relative w-full overflow-hidden block transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] ${isHovered ? 'is-hovered' : ''}`}
       style={{ borderRadius: radiusPx }}
       onMouseEnter={onMouseEnter}
@@ -124,6 +123,7 @@ export function ProjectCard({
           <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
         </svg>
       </div>
-    </a>
+    </Link>
+
   )
 }
