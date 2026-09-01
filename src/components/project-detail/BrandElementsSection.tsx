@@ -7,10 +7,7 @@ interface Props {
 
 export function BrandElementsSection({ elements, bases }: Props) {
   return (
-    <section
-      className="mx-auto max-w-[1400px] px-6"
-      style={{ paddingTop: '48px' }}
-    >
+    <section className="mx-auto max-w-[1400px] px-6 py-16">
       <div className="grid grid-cols-2 gap-5 md:grid-cols-4 md:gap-6">
         {elements.map((element) => (
           <div key={element.name} className="overflow-hidden">

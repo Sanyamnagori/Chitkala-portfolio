@@ -13,6 +13,7 @@ import { BrandElementsSection } from '../components/project-detail/BrandElements
 import { TypographySection } from '../components/project-detail/TypographySection'
 import { LogoDisplaySection } from '../components/project-detail/LogoDisplaySection'
 import { ApplicationsSection } from '../components/project-detail/ApplicationsSection'
+import { ProjectNavbar } from '../components/project-detail/ProjectNavbar'
 
 export function ProjectDetailPage() {
   const { slug } = useParams<{ slug: string }>()
@@ -65,6 +66,9 @@ export function ProjectDetailPage() {
 
   return (
     <div className="min-h-screen w-full bg-white text-black">
+      {/* Navbar */}
+      <ProjectNavbar />
+
       {/* 1. Hero Cover & Title */}
       <ProjectDetailHero content={content.hero} />
 

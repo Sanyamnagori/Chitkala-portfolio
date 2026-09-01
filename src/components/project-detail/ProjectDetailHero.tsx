@@ -15,7 +15,7 @@ export function ProjectDetailHero({ content }: Props) {
       />
       <div
         className="absolute inset-x-0 top-0 mx-auto max-w-[1400px] px-8"
-        style={{ paddingTop: '40px' }}
+        style={{ paddingTop: '90px' }}
       >
         <GoBackLink />
       </div>

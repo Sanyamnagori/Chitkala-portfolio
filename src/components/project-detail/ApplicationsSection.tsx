@@ -33,175 +33,204 @@ export function ApplicationsSection({ banner, title }: Props) {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  // p goes from 1 (start: stacked cluster) to 0 (end: full final grid collage)
-  const p = 1 - progress
+  // Helper linear interpolation
+  const lerp = (a: number, b: number) => a + (b - a) * progress
 
   return (
-    <div ref={trackRef} className="relative w-full h-[220vh] bg-white">
+    <div ref={trackRef} className="relative w-full h-[320vh] bg-white mt-12">
       {/* Sticky Viewport Container - Screen locks while scrolling */}
       <div className="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden bg-white">
-        <div className="relative mx-auto w-full max-w-[1400px] px-6 py-8">
-          {/* Dynamic Overlapping Collage Layout */}
-          <div className="relative w-full">
-            {/* TOP ROW: 4 Items */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 items-start">
-              {/* 1. Jacket */}
-              <div
-                className="overflow-hidden rounded-xl shadow-sm transition-transform duration-100 ease-out"
-                style={{
-                  transform: `translate(${p * 140}px, ${p * 80}px) scale(${1 - p * 0.25}) rotate(${p * -6}deg)`,
-                  opacity: 1 - p * 0.2,
-                }}
-              >
-                <img
-                  src={`${assetBase}/application-3.png`}
-                  alt="Travel AMore Jacket"
-                  className="w-full h-[260px] md:h-[380px] object-cover"
-                />
-              </div>
+        <div className="relative mx-auto w-full max-w-[1340px] w-full aspect-[14/10] lg:aspect-[16/9] max-h-[90vh] px-4">
 
-              {/* 2. Mug */}
-              <div
-                className="overflow-hidden rounded-xl shadow-sm transition-transform duration-100 ease-out"
-                style={{
-                  transform: `translate(${p * 80}px, ${p * 60}px) scale(${1 - p * 0.3})`,
-                  opacity: 1 - p * 0.2,
-                }}
-              >
-                <img
-                  src={`${assetBase}/application-2.png`}
-                  alt="Travel AMore Mug"
-                  className="w-full h-[200px] md:h-[290px] object-cover"
-                />
-              </div>
-
-              {/* 3. Sweater */}
-              <div
-                className="overflow-hidden rounded-xl shadow-sm transition-transform duration-100 ease-out"
-                style={{
-                  transform: `translate(${p * -100}px, ${p * 60}px) scale(${1 - p * 0.3})`,
-                  opacity: 1 - p * 0.2,
-                }}
-              >
-                <img
-                  src={`${assetBase}/application-4.png`}
-                  alt="Travel AMore Sweater"
-                  className="w-full h-[240px] md:h-[330px] object-cover"
-                />
-              </div>
-
-              {/* 4. Glass Bottle */}
-              <div
-                className="overflow-hidden rounded-xl shadow-sm transition-transform duration-100 ease-out"
-                style={{
-                  transform: `translate(${p * -260}px, ${p * 100}px) scale(${1 - p * 0.25})`,
-                  opacity: 1 - p * 0.2,
-                }}
-              >
-                <img
-                  src={`${assetBase}/application-5.png`}
-                  alt="Travel AMore Glass Bottle"
-                  className="w-full h-[260px] md:h-[380px] object-cover"
-                />
-              </div>
-            </div>
-
-            {/* MIDDLE OVERLAPPING SECTION */}
-            <div className="relative mt-4 mb-2 min-h-[140px] md:min-h-[180px] flex items-center justify-center">
-              {/* Overlapping Left: Green Passport Cover */}
-              <div
-                className="absolute left-[12%] md:left-[14%] -top-24 md:-top-40 z-30 w-[140px] md:w-[220px] transition-transform duration-100 ease-out"
-                style={{
-                  transform: `translate(${p * -60}px, ${p * -40}px) rotate(${-14 + p * -6}deg) scale(${1 - p * 0.15})`,
-                  filter: 'drop-shadow(0 12px 20px rgba(0,0,0,0.25))',
-                }}
-              >
-                <img
-                  src={`${assetBase}/application-8.png`}
-                  alt="Green Passport Cover"
-                  className="w-full h-auto rounded-xl"
-                />
-              </div>
-
-              {/* Overlapping Center-Right: Gold Coin */}
-              <div
-                className="absolute left-[52%] md:left-[51%] -top-16 md:-top-28 z-30 w-[100px] md:w-[155px] transition-transform duration-100 ease-out"
-                style={{
-                  transform: `translate(${p * 240}px, ${p * 120}px) scale(${1 - p * 0.1})`,
-                  filter: 'drop-shadow(0 10px 16px rgba(0,0,0,0.22))',
-                }}
-              >
-                <img
-                  src={`${assetBase}/application-7.png`}
-                  alt="Travel AMore Gold Coin"
-                  className="w-full h-auto rounded-full"
-                />
-              </div>
-
-              {/* Center Dark Red Title */}
-              <div
-                className="z-20 text-center transition-transform duration-100 ease-out"
-                style={{
-                  transform: p > 0.4 ? `translate(${p * 320}px, ${p * -60}px) rotate(${p * 90}deg)` : 'none',
-                }}
-              >
-                <h2
-                  className="font-[family-name:var(--font-cabinet)] font-bold text-[#a71714] tracking-tight mt-6"
-                  style={{ fontSize: 'clamp(32px, 4.5vw, 58px)' }}
-                >
-                  {title}
-                </h2>
-              </div>
-
-              {/* Overlapping Right: Blue Baseball Cap */}
-              <div
-                className="absolute right-[6%] md:right-[12%] -top-16 md:-top-28 z-30 w-[150px] md:w-[230px] transition-transform duration-100 ease-out"
-                style={{
-                  transform: `translate(${p * 60}px, ${p * -60}px) rotate(${15 + p * 8}deg) scale(${1 - p * 0.15})`,
-                  filter: 'drop-shadow(0 14px 22px rgba(0,0,0,0.28))',
-                }}
-              >
-                <img
-                  src={`${assetBase}/application-6.png`}
-                  alt="Travel AMore Cap"
-                  className="w-full h-auto"
-                />
-              </div>
-            </div>
-
-            {/* BOTTOM ROW: Sunset Banner (Left) + Black Tumbler (Right) */}
-            <div className="grid grid-cols-1 md:grid-cols-12 gap-5 items-stretch mt-0">
-              {/* Wide Sunset Heart Photo */}
-              <div
-                className="md:col-span-8 overflow-hidden rounded-2xl shadow-sm transition-transform duration-100 ease-out"
-                style={{
-                  transform: `translate(${p * 220}px, ${p * -60}px) scale(${1 - p * 0.35})`,
-                  zIndex: p > 0.4 ? 5 : 1,
-                }}
-              >
-                <img
-                  src={banner}
-                  alt="Travel AMore Sunset Heart"
-                  className="w-full h-full min-h-[300px] md:min-h-[440px] object-cover"
-                />
-              </div>
-
-              {/* Tall Black Tumbler Mug */}
-              <div
-                className="md:col-span-4 overflow-hidden rounded-2xl shadow-sm transition-transform duration-100 ease-out"
-                style={{
-                  transform: `translate(${p * -400}px, ${p * -200}px) scale(${1 + p * 0.15})`,
-                  zIndex: p > 0.4 ? 40 : 1,
-                }}
-              >
-                <img
-                  src={`${assetBase}/application-9.png`}
-                  alt="Travel AMore Tumbler"
-                  className="w-full h-full min-h-[300px] md:min-h-[440px] object-cover"
-                />
-              </div>
-            </div>
+          {/* 1. Jacket */}
+          <div
+            className="absolute overflow-hidden rounded-xl shadow-md transition-all duration-100 ease-out"
+            style={{
+              left: `${lerp(12, 0)}%`,
+              top: `${lerp(25, 0)}%`,
+              width: `${lerp(22, 24.5)}%`,
+              height: `${lerp(40, 46)}%`,
+              zIndex: progress < 0.5 ? 10 : 1,
+              transform: `rotate(${lerp(-4, 0)}deg)`,
+            }}
+          >
+            <img
+              src={`${assetBase}/application-3.png`}
+              alt="Jacket"
+              className="w-full h-full object-cover"
+            />
           </div>
+
+          {/* 2. Mug */}
+          <div
+            className="absolute overflow-hidden rounded-xl shadow-md transition-all duration-100 ease-out"
+            style={{
+              left: `${lerp(34, 25.5)}%`,
+              top: `${lerp(8, 0)}%`,
+              width: `${lerp(18, 24.5)}%`,
+              height: `${lerp(24, 31)}%`,
+              zIndex: progress < 0.5 ? 5 : 1,
+              opacity: lerp(0.3, 1),
+            }}
+          >
+            <img
+              src={`${assetBase}/application-2.png`}
+              alt="Mug"
+              className="w-full h-full object-cover"
+            />
+          </div>
+
+          {/* 3. Sweater */}
+          <div
+            className="absolute overflow-hidden rounded-xl shadow-md transition-all duration-150 ease-out"
+            style={{
+              left: `${lerp(56, 51)}%`,
+              top: `${lerp(16, 0)}%`,
+              width: `${lerp(20, 24.5)}%`,
+              height: `${lerp(29, 33)}%`,
+              zIndex: progress < 0.5 ? 5 : 1,
+              opacity: lerp(0.4, 1),
+            }}
+          >
+            <img
+              src={`${assetBase}/application-4.png`}
+              alt="Sweater"
+              className="w-full h-full object-cover"
+            />
+          </div>
+
+          {/* 4. Glass Bottle */}
+          <div
+            className="absolute overflow-hidden rounded-xl shadow-md transition-all duration-150 ease-out"
+            style={{
+              left: `${lerp(22, 76.5)}%`,
+              top: `${lerp(64, 0)}%`,
+              width: `${lerp(22, 23.5)}%`,
+              height: `${lerp(32, 46)}%`,
+              zIndex: progress < 0.5 ? 5 : 1,
+              transform: `rotate(${lerp(-12, 0)}deg)`,
+            }}
+          >
+            <img
+              src={`${assetBase}/application-5.png`}
+              alt="Glass Bottle"
+              className="w-full h-full object-cover"
+            />
+          </div>
+
+          {/* 5. Central Featured Black Tumbler */}
+          <div
+            className="absolute overflow-hidden rounded-2xl shadow-2xl transition-all duration-150 ease-out"
+            style={{
+              left: `${lerp(35, 67.5)}%`,
+              top: `${lerp(15, 52)}%`,
+              width: `${lerp(30, 32.5)}%`,
+              height: `${lerp(64, 48)}%`,
+              zIndex: progress < 0.5 ? 35 : 10,
+            }}
+          >
+            <img
+              src={`${assetBase}/application-9.png`}
+              alt="Black Tumbler"
+              className="w-full h-full object-cover"
+            />
+          </div>
+
+          {/* 6. Green Passport Cover (Floating Overlapping Upper-Left of Tumbler) */}
+          <div
+            className="absolute transition-all duration-150 ease-out"
+            style={{
+              left: `${lerp(20, 13)}%`,
+              top: `${lerp(10, 18)}%`,
+              width: `${lerp(20, 16)}%`,
+              transform: `rotate(${lerp(-15, -14)}deg)`,
+              filter: 'drop-shadow(0 16px 28px rgba(0,0,0,0.35))',
+              zIndex: 45,
+            }}
+          >
+            <img
+              src={`${assetBase}/application-8.png`}
+              alt="Green Passport"
+              className="w-full h-auto rounded-xl"
+            />
+          </div>
+
+          {/* 7. Blue Baseball Cap (Floating Overlapping Upper-Right of Tumbler) */}
+          <div
+            className="absolute transition-all duration-150 ease-out"
+            style={{
+              left: `${lerp(54, 65)}%`,
+              top: `${lerp(8, 15)}%`,
+              width: `${lerp(21, 17)}%`,
+              transform: `rotate(${lerp(18, 15)}deg)`,
+              filter: 'drop-shadow(0 16px 28px rgba(0,0,0,0.35))',
+              zIndex: 45,
+            }}
+          >
+            <img
+              src={`${assetBase}/application-6.png`}
+              alt="Blue Cap"
+              className="w-full h-auto"
+            />
+          </div>
+
+          {/* 8. Gold Coin (Floating Overlapping Bottom-Right of Stack) */}
+          <div
+            className="absolute transition-all duration-150 ease-out"
+            style={{
+              left: `${lerp(68, 48)}%`,
+              top: `${lerp(50, 15)}%`,
+              width: `${lerp(15, 11)}%`,
+              transform: `rotate(${lerp(5, 0)}deg)`,
+              filter: 'drop-shadow(0 14px 22px rgba(0,0,0,0.3))',
+              zIndex: 45,
+            }}
+          >
+            <img
+              src={`${assetBase}/application-7.png`}
+              alt="Gold Coin"
+              className="w-full h-auto rounded-full"
+            />
+          </div>
+
+          {/* 9. Red Title "Travel AMore" (Vertical Right in Stack -> Horizontal Centered in Collage) */}
+          <div
+            className="absolute transition-all duration-150 ease-out flex items-center justify-center"
+            style={{
+              left: `${lerp(69, 0)}%`,
+              top: `${lerp(30, 40)}%`,
+              width: `${lerp(30, 100)}%`,
+              transform: progress < 0.4 ? 'rotate(90deg)' : 'rotate(0deg)',
+              zIndex: 40,
+            }}
+          >
+            <h2
+              className="font-[family-name:var(--font-cabinet)] font-bold text-[#a71714] tracking-tight text-center whitespace-nowrap"
+              style={{ fontSize: `clamp(24px, ${lerp(3.5, 4.2)}vw, 56px)` }}
+            >
+              {title}
+            </h2>
+          </div>
+
+          {/* 10. Sunset Hands-Heart Photo (Tucked Bottom Left -> Wide Bottom Left) */}
+          <div
+            className="absolute overflow-hidden rounded-2xl shadow-lg transition-all duration-150 ease-out"
+            style={{
+              left: `${lerp(16, 0)}%`,
+              top: `${lerp(61, 52)}%`,
+              width: `${lerp(26, 65)}%`,
+              height: `${lerp(27, 48)}%`,
+              transform: `rotate(${lerp(-8, 0)}deg)`,
+              zIndex: progress < 0.5 ? 5 : 10,
+            }}
+          >
+            <img
+              src={banner}
+              alt="Sunset Heart"
+              className="w-full h-full object-cover"
+            />
+          </div>
+
         </div>
       </div>
     </div>

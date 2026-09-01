@@ -6,10 +6,7 @@ interface Props {
 
 export function TypographySection({ fonts }: Props) {
   return (
-    <section
-      className="mx-auto max-w-[1400px] px-6"
-      style={{ paddingTop: '48px' }}
-    >
+    <section className="mx-auto max-w-[1400px] px-6 py-16 pb-24">
       <div className="relative grid gap-12 md:grid-cols-2 md:gap-0">
         <div className="md:pr-10">
           <h3
