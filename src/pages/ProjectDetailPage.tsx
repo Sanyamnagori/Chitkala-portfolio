@@ -11,7 +11,7 @@ import { ConceptSection } from '../components/project-detail/ConceptSection'
 import { LogoShowcase } from '../components/project-detail/LogoShowcase'
 import { BrandElementsSection } from '../components/project-detail/BrandElementsSection'
 import { TypographySection } from '../components/project-detail/TypographySection'
-import { LogoDisplaySection } from '../components/project-detail/LogoDisplaySection'
+
 import { ApplicationsSection } from '../components/project-detail/ApplicationsSection'
 import { ProjectNavbar } from '../components/project-detail/ProjectNavbar'
 
