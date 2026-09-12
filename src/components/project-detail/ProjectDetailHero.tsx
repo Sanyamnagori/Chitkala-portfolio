@@ -1,5 +1,4 @@
 import type { ProjectDetailHero as HeroContent } from '../../types/projectDetail'
-import { GoBackLink } from './GoBackLink'
 
 interface Props {
   content: HeroContent
@@ -7,17 +6,13 @@ interface Props {
 
 export function ProjectDetailHero({ content }: Props) {
   return (
-    <section className="relative w-full h-screen min-h-[600px] overflow-hidden">
-      <img
-        src={content.coverImage}
-        alt={content.title}
-        className="h-full w-full object-cover"
-      />
-      <div
-        className="absolute inset-x-0 top-0 mx-auto max-w-[1400px] px-8"
-        style={{ paddingTop: '90px' }}
-      >
-        <GoBackLink />
+    <section className="relative w-full overflow-hidden bg-white">
+      <div className="w-full flex justify-center items-center">
+        <img
+          src={content.coverImage}
+          alt={content.title}
+          className="w-full max-w-full h-auto object-contain block"
+        />
       </div>
       <div
         className="absolute bottom-0 left-0 right-0 mx-auto w-full max-w-[1400px] px-8 pb-12 md:pb-16"
@@ -32,3 +27,4 @@ export function ProjectDetailHero({ content }: Props) {
     </section>
   )
 }
+

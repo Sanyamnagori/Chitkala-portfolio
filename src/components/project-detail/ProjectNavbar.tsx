@@ -4,7 +4,25 @@ import { navLinks } from '../../data/projects'
 
 export function ProjectNavbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
   const location = useLocation()
+
+  // Track scroll position to show/hide navbar
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setScrolled(true)
+      } else {
+        setScrolled(false)
+      }
+    }
+
+    // Check initial scroll
+    handleScroll()
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   // Close menu on route change
   useEffect(() => {
@@ -25,7 +43,11 @@ export function ProjectNavbar() {
 
   return (
     <>
-      <header className="fixed top-0 left-0 z-[60] w-full bg-white shadow-sm border-b border-gray-100">
+      <header
+        className={`fixed top-0 left-0 z-[60] w-full bg-white shadow-sm border-b border-gray-100 transition-all duration-300 ${
+          scrolled || isMenuOpen ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0 pointer-events-none'
+        }`}
+      >
         <div className="mx-auto flex h-[60px] w-full items-center justify-between px-6 md:px-8">
           {/* Left: Logo */}
           <Link to="/" className="flex flex-col items-start justify-center" onClick={() => setIsMenuOpen(false)}>
@@ -78,3 +100,4 @@ export function ProjectNavbar() {
     </>
   )
 }
+
