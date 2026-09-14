@@ -110,36 +110,36 @@ export function ProjectDetailPage() {
           className="mx-auto max-w-[1400px] mt-24 px-8"
           style={{ paddingTop: '60px' }}
         >
-          <div className="flex flex-col md:flex-row justify-between items-center gap-12">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-10">
             {/* Left: Founder Portrait */}
             {content.founder.image && (
-              <div className="w-full md:w-1/2 flex justify-center md:justify-start">
+              <div className="w-full md:w-1/3 flex justify-center md:justify-start">
                 <img
                   src={content.founder.image}
                   alt={content.founder.name}
-                  className="w-full max-w-[420px] rounded-2xl object-cover shadow-md"
-                  style={{ maxHeight: '540px' }}
+                  className="w-full max-w-[360px] rounded-2xl object-cover shadow-md"
+                  style={{ maxHeight: '460px' }}
                 />
               </div>
             )}
 
-            {/* Right: Founder Profile Details */}
-            <div className="w-full md:w-1/2 flex flex-col justify-center">
+            {/* Right: Founder Profile Details (Noticeably wider column) */}
+            <div className="w-full md:w-2/3 flex flex-col items-center text-center justify-center max-w-[780px]">
               <h3
-                className="font-[family-name:var(--font-cabinet)] font-bold text-chitkala-red text-center md:text-left"
+                className="font-[family-name:var(--font-cabinet)] font-bold text-chitkala-red text-center"
                 style={{ fontSize: '43.56px' }}
               >
                 {content.founder.name}
               </h3>
 
-              <div className="mt-6 space-y-4 font-[family-name:var(--font-cabinet)] font-medium text-gray-700 leading-relaxed text-lg text-center md:text-left">
+              <div className="mt-6 space-y-4 font-[family-name:var(--font-cabinet)] font-medium text-gray-700 leading-relaxed text-lg text-center w-full max-w-[850px]">
                 {content.founder.bio.split('\n\n').map((paragraph, i) => (
                   <p key={i}>{paragraph}</p>
                 ))}
               </div>
 
               {/* Social / Website Links */}
-              <div className="mt-8 flex flex-wrap items-center justify-center md:justify-end gap-6 font-[family-name:var(--font-cabinet)] font-medium text-base text-gray-800">
+              <div className="mt-8 flex flex-wrap items-center justify-center gap-8 font-[family-name:var(--font-cabinet)] font-medium text-base text-gray-800">
                 <a
                   href={content.founder.instagram}
                   target="_blank"
