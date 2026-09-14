@@ -22,7 +22,7 @@ export function FilterTag({ label, active = false, width }: FilterTagProps) {
         flexShrink: 1,
         flexBasis: width ? `calc(${width}px * var(--scale-factor, 1))` : 'auto',
         borderRadius: 'var(--tag-radius, 20px)',
-        fontSize: 'var(--tag-font-size, 29.04px)',
+        fontSize: 'var(--tag-font-size, 24px)',
         paddingLeft: width ? undefined : 'var(--tag-padding, 24px)',
         paddingRight: width ? undefined : 'var(--tag-padding, 24px)',
       }}

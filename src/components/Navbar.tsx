@@ -18,7 +18,7 @@ export function Navbar() {
           <span
             className="font-[family-name:var(--font-cabinet)] font-medium text-chitkala-red"
             style={{
-              fontSize: '14.52px',
+              fontSize: '12px',
               marginTop: '2px',
               width: '150px',
               textAlign: 'center',
@@ -30,7 +30,7 @@ export function Navbar() {
 
         <nav
           className="hidden items-center font-[family-name:var(--font-cabinet)] font-medium text-chitkala-red lg:flex"
-          style={{ fontSize: '18.15px', gap: '35px' }}
+          style={{ fontSize: '15px', gap: '35px' }}
         >
           {navLinks.map((link) => (
             <a
