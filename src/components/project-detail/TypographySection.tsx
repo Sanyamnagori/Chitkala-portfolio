@@ -11,19 +11,19 @@ export function TypographySection({ fonts }: Props) {
         <div className="md:pr-10">
           <h3
             className="font-[family-name:var(--font-bebas)] uppercase text-[#1B1B1B]"
-            style={{ fontSize: '42px', lineHeight: 1 }}
+            style={{ fontSize: '50.82px', lineHeight: 1 }}
           >
             {fonts[0]?.name}
           </h3>
           <p
             className="mt-2 font-[family-name:var(--font-bebas)] text-[#1B1B1B]"
-            style={{ fontSize: '24px' }}
+            style={{ fontSize: '29.04px' }}
           >
             {fonts[0]?.subtitle}
           </p>
           <p
             className="mt-4 max-w-[560px] font-[family-name:var(--font-bebas)] leading-[1.3] text-[#1B1B1B]"
-            style={{ fontSize: '24px' }}
+            style={{ fontSize: '29.04px' }}
           >
             {fonts[0]?.description}
           </p>
@@ -37,19 +37,19 @@ export function TypographySection({ fonts }: Props) {
         <div className="md:pl-10">
           <h3
             className="font-[family-name:var(--font-montserrat)] text-[#1B1B1B]"
-            style={{ fontSize: '42px', lineHeight: 1.1 }}
+            style={{ fontSize: '50.82px', lineHeight: 1.1 }}
           >
             {fonts[1]?.name}
           </h3>
           <p
             className="mt-2 font-[family-name:var(--font-montserrat)] text-[#1B1B1B]"
-            style={{ fontSize: '24px' }}
+            style={{ fontSize: '29.04px' }}
           >
             {fonts[1]?.subtitle}
           </p>
           <p
             className="mt-4 max-w-[620px] whitespace-pre-line font-[family-name:var(--font-montserrat)] font-medium leading-[1.45] text-[#1B1B1B]"
-            style={{ fontSize: '16px' }}
+            style={{ fontSize: '19.36px' }}
           >
             {fonts[1]?.description}
           </p>

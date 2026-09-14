@@ -206,7 +206,7 @@ export function ApplicationsSection({ banner, title }: Props) {
           >
             <h2
               className="font-[family-name:var(--font-cabinet)] font-bold text-[#a71714] tracking-tight text-center whitespace-nowrap"
-              style={{ fontSize: `clamp(24px, ${lerp(3.5, 4.2)}vw, 56px)` }}
+              style={{ fontSize: `clamp(29.04px, ${lerp(4.235, 5.082)}vw, 67.76px)` }}
             >
               {title}
             </h2>

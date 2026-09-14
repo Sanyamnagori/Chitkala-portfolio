@@ -20,7 +20,7 @@ export const travelAmoreDetail: ProjectDetailContent = {
   },
   quote: {
     graphic: `${assetBase}/sanskrit-quote.svg`,
-    text: 'Those who wish to seek virtues\ntravel the entire world.',
+    text: 'Those who wish to seek virtues travel the entire world.',
     attribution: '~ Panchatantra',
   },
   concept: {

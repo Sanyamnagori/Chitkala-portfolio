@@ -55,13 +55,13 @@ export function ProjectCard({
         >
           <h3
             className="font-[family-name:var(--font-cabinet)] font-bold leading-[1.15] text-chitkala-dark-red project-title transition-colors duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]"
-            style={{ fontSize: 'calc(39.55px * var(--card-scale, 1))' }}
+            style={{ fontSize: 'calc(47.86px * var(--card-scale, 1))' }}
           >
             {project.title}
           </h3>
           <p
             className="font-[family-name:var(--font-cabinet)] font-normal text-chitkala-dark-red project-services mt-1 transition-colors duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]"
-            style={{ fontSize: 'calc(24.45px * var(--card-scale, 1))' }}
+            style={{ fontSize: 'calc(29.58px * var(--card-scale, 1))' }}
           >
             {project.services}
           </p>
@@ -69,7 +69,7 @@ export function ProjectCard({
         <span
           className="shrink-0 font-[family-name:var(--font-cabinet)] font-medium text-chitkala-dark-red project-year transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]"
           style={{
-            fontSize: 'calc(24.45px * var(--card-scale, 1))',
+            fontSize: 'calc(29.58px * var(--card-scale, 1))',
             transform: isHovered ? 'translateY(10px)' : 'translateY(0)',
           }}
         >

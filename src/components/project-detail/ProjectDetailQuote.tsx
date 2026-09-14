@@ -22,8 +22,8 @@ export function ProjectDetailQuote({ content }: Props) {
       )}
 
       <blockquote
-        className="mx-auto max-w-[480px] whitespace-pre-line font-[family-name:var(--font-cabinet)] font-medium leading-[1.3] text-[#2D2D2D]"
-        style={{ fontSize: '18px' }}
+        className="mx-auto max-w-[900px] whitespace-pre-line font-[family-name:var(--font-cabinet)] font-medium leading-[1.3] text-[#2D2D2D]"
+        style={{ fontSize: '21.78px' }}
       >
         {content.text}
         {'\n'}

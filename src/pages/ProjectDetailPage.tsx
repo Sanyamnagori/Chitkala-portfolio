@@ -127,7 +127,7 @@ export function ProjectDetailPage() {
             <div className="w-full md:w-1/2 flex flex-col justify-center">
               <h3
                 className="font-[family-name:var(--font-cabinet)] font-bold text-chitkala-red text-center md:text-left"
-                style={{ fontSize: '36px' }}
+                style={{ fontSize: '43.56px' }}
               >
                 {content.founder.name}
               </h3>
@@ -163,7 +163,7 @@ export function ProjectDetailPage() {
                   <svg className="w-5 h-5 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <circle cx="12" cy="12" r="10" strokeWidth="2" />
                     <line x1="2" y1="12" x2="22" y2="12" strokeWidth="2" />
-                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" strokeWidth="2" />
+                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1 4-10z" strokeWidth="2" />
                   </svg>
                   <span>www.travelamore.club</span>
                 </a>
@@ -181,13 +181,13 @@ export function ProjectDetailPage() {
           <div className="w-full border-t-2 border-chitkala-red pt-6 mb-8 flex justify-between items-center">
             <h4
               className="font-[family-name:var(--font-cabinet)] font-bold text-chitkala-red uppercase tracking-wider"
-              style={{ fontSize: '24px' }}
+              style={{ fontSize: '29.04px' }}
             >
               NEXT PROJECT
             </h4>
             <span
               className="font-[family-name:var(--font-cabinet)] font-bold text-chitkala-red"
-              style={{ fontSize: '24px' }}
+              style={{ fontSize: '29.04px' }}
             >
               &gt;&gt;&gt;&gt;&gt;&gt;
             </span>
@@ -206,20 +206,20 @@ export function ProjectDetailPage() {
                   <div>
                     <h5
                       className="font-[family-name:var(--font-cabinet)] font-bold leading-tight"
-                      style={{ fontSize: '20px' }}
+                      style={{ fontSize: '24.2px' }}
                     >
                       {project.title}
                     </h5>
                     <p
                       className="font-[family-name:var(--font-cabinet)] opacity-90 mt-1"
-                      style={{ fontSize: '14px' }}
+                      style={{ fontSize: '16.94px' }}
                     >
                       {project.services}
                     </p>
                   </div>
                   <span
                     className="font-[family-name:var(--font-cabinet)] font-bold shrink-0 ml-2"
-                    style={{ fontSize: '18px' }}
+                    style={{ fontSize: '21.78px' }}
                   >
                     {project.year}
                   </span>
@@ -243,7 +243,7 @@ export function ProjectDetailPage() {
             />
             <span
               className="font-[family-name:var(--font-cabinet)] font-medium text-chitkala-red mt-1"
-              style={{ fontSize: '13px' }}
+              style={{ fontSize: '15.73px' }}
             >
               Where Thought Finds Form
             </span>

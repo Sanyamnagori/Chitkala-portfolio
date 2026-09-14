@@ -14,10 +14,10 @@ export function ConceptSection({ content }: Props) {
         {/* Left side text blocks (1 & 3) */}
         <div className="flex flex-col justify-between gap-8 xl:w-[260px] xl:pt-10">
           {content.annotations[0] && (
-            <div>
+            <div style={{ transform: 'translateX(-90px)' }}>
               <p
                 className="font-[family-name:var(--font-cabinet)] font-medium leading-[1.45] text-[#2D2D2D]"
-                style={{ fontSize: '17px' }}
+                style={{ fontSize: '20.57px' }}
               >
                 {content.annotations[0].text}
                 <span className="ml-1.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-chitkala-red text-[10px] font-bold text-white align-middle">
@@ -28,10 +28,10 @@ export function ConceptSection({ content }: Props) {
           )}
 
           {content.annotations[2] && (
-            <div className="xl:mt-24">
+            <div className="xl:mt-18">
               <p
                 className="font-[family-name:var(--font-cabinet)] font-medium leading-[1.45] text-[#2D2D2D]"
-                style={{ fontSize: '17px' }}
+                style={{ fontSize: '20.57px' }}
               >
                 {content.annotations[2].text}
                 <span className="ml-1.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-chitkala-red text-[10px] font-bold text-white align-middle">
@@ -55,10 +55,10 @@ export function ConceptSection({ content }: Props) {
         {/* Right side text blocks (2 & 4) */}
         <div className="flex flex-col justify-between gap-8 xl:w-[280px] xl:pt-10">
           {content.annotations[1] && (
-            <div>
+            <div className="xl:w-[360px] max-w-[380px]" style={{ marginTop: '30px' }}>
               <p
                 className="font-[family-name:var(--font-cabinet)] font-medium leading-[1.45] text-[#2D2D2D]"
-                style={{ fontSize: '17px' }}
+                style={{ fontSize: '20.57px' }}
               >
                 Inspired by the <strong>Pancha Bhutas. Earth, Water, Fire, Air, & Space.</strong> It represents the forces that shape our world. A sixth element, human experience, brings meaning to the journey.
                 <span className="ml-1.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-chitkala-red text-[10px] font-bold text-white align-middle">
@@ -69,10 +69,10 @@ export function ConceptSection({ content }: Props) {
           )}
 
           {content.annotations[3] && (
-            <div className="xl:mt-28">
+            <div className="xl:mt-15" style={{ transform: 'translateX(80px)' }}>
               <p
                 className="font-[family-name:var(--font-cabinet)] font-medium leading-[1.45] text-[#2D2D2D]"
-                style={{ fontSize: '17px' }}
+                style={{ fontSize: '20.57px' }}
               >
                 {content.annotations[3].text}
                 <span className="ml-1.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-chitkala-red text-[10px] font-bold text-white align-middle">

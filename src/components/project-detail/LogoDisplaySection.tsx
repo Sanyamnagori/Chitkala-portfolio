@@ -16,7 +16,7 @@ export function LogoDisplaySection({ image, title }: Props) {
       />
       <h2
         className="pointer-events-none absolute right-[80px] top-[180px] hidden origin-center rotate-90 font-[family-name:var(--font-cabinet)] font-bold text-chitkala-dark-red xl:block"
-        style={{ fontSize: '84px' }}
+        style={{ fontSize: '101.64px' }}
       >
         {title}
       </h2>

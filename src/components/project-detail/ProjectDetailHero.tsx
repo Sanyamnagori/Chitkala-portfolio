@@ -19,7 +19,7 @@ export function ProjectDetailHero({ content }: Props) {
       >
         <h1
           className="font-[family-name:var(--font-cabinet)] font-bold text-white tracking-tight drop-shadow-md"
-          style={{ fontSize: 'clamp(44px, 5vw, 64px)', lineHeight: 1.1 }}
+          style={{ fontSize: 'clamp(53.24px, 6.05vw, 77.44px)', lineHeight: 1.1 }}
         >
           {content.title}
         </h1>

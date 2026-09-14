@@ -14,7 +14,7 @@
   --scale-factor: 0.55;
   --tag-height: 48px;
   --tag-radius: 15px;
-  --tag-font-size: 18px;
+  --tag-font-size: 21.78px;
   --tag-padding: 18px;
   --filter-gap: 16px;
   --card-scale: 0.75;
@@ -25,7 +25,7 @@
     --scale-factor: 0.48;
     --tag-height: 44px;
     --tag-radius: 14px;
-    --tag-font-size: 16px;
+    --tag-font-size: 19.36px;
     --tag-padding: 16px;
     --filter-gap: 14px;
     --card-scale: 0.7;
@@ -37,7 +37,7 @@
     --scale-factor: 0.42;
     --tag-height: 38px;
     --tag-radius: 12px;
-    --tag-font-size: 15px;
+    --tag-font-size: 18.15px;
     --tag-padding: 14px;
     --filter-gap: 12px;
     --card-scale: 0.62;
@@ -49,7 +49,7 @@
     --scale-factor: 0.36;
     --tag-height: 34px;
     --tag-radius: 10px;
-    --tag-font-size: 14px;
+    --tag-font-size: 16.94px;
     --tag-padding: 10px;
     --filter-gap: 10px;
     --card-scale: 0.55;
@@ -61,7 +61,7 @@
     --scale-factor: 0.32;
     --tag-height: 30px;
     --tag-radius: 8px;
-    --tag-font-size: 12px;
+    --tag-font-size: 14.52px;
     --tag-padding: 8px;
     --filter-gap: 8px;
     --card-scale: 0.48;
@@ -75,6 +75,7 @@
 }
 
 html {
+  font-size: 121%;
   scroll-behavior: smooth;
 }
 
@@ -138,12 +139,12 @@ body {
   }
 
   .responsive-project-header h3 {
-    font-size: 24px !important;
+    font-size: 29.04px !important;
   }
 
   .responsive-project-header p,
   .responsive-project-header span {
-    font-size: 16px !important;
+    font-size: 19.36px !important;
   }
 
   .responsive-project-header {
@@ -159,7 +160,7 @@ body {
 
   .responsive-filter-tag {
     height: 56px !important;
-    font-size: 18px !important;
+    font-size: 21.78px !important;
     padding-left: 20px !important;
     padding-right: 20px !important;
   }
@@ -173,16 +174,16 @@ body {
 @media (min-width: 768px) and (max-width: 1279px) {
   .responsive-filter-tag {
     height: 72px !important;
-    font-size: 28px !important;
+    font-size: 33.88px !important;
   }
 
   .responsive-project-header h3 {
-    font-size: 30px !important;
+    font-size: 36.3px !important;
   }
 
   .responsive-project-header p,
   .responsive-project-header span {
-    font-size: 20px !important;
+    font-size: 24.2px !important;
   }
 
   .responsive-project-image {

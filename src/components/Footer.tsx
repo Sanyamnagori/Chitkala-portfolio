@@ -22,7 +22,7 @@ export function Footer() {
 
           <p
             className="self-end font-[family-name:var(--font-inter)] font-normal text-chitkala-red"
-            style={{ fontSize: '15px', marginTop: '20px' }}
+            style={{ fontSize: '18.15px', marginTop: '20px' }}
           >
             © 2026 Studio Chitkala All rights reserved
           </p>
