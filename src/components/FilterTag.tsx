@@ -13,8 +13,8 @@ export function FilterTag({ label, active = false, width }: FilterTagProps) {
       className={[
         'responsive-filter-tag inline-flex shrink-0 items-center justify-center font-[family-name:var(--font-cabinet)] font-normal uppercase whitespace-nowrap transition-all duration-200',
         active
-          ? 'bg-white text-chitkala-red'
-          : 'border border-white bg-transparent text-white hover:bg-white/10',
+          ? 'bg-chitkala-red text-white'
+          : 'border border-chitkala-red bg-white text-chitkala-red hover:bg-chitkala-red hover:text-white',
       ].join(' ')}
       style={{
         height: 'var(--tag-height, 64px)',

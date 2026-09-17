@@ -7,7 +7,7 @@ import { ProjectDetailPage } from './pages/ProjectDetailPage'
 
 function Home() {
   return (
-    <div className="min-h-svh bg-chitkala-red">
+    <div className="min-h-svh bg-white">
       <Navbar />
       <main>
         <FilterTags />

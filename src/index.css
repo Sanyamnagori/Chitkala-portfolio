@@ -195,7 +195,8 @@ body {
   position: relative;
   width: 100%;
   overflow: hidden;
-  background-color: var(--color-chitkala-gray);
+  background-color: #ffffff;
+  border: 1.5px solid var(--color-chitkala-red);
   box-shadow: none;
   height: 280px;
 }
@@ -209,14 +210,14 @@ body {
 .project-title,
 .project-services,
 .project-year {
-  color: var(--color-chitkala-dark-red);
+  color: #ffffff;
   transition: color 700ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .portfolio-card.is-hovered .project-title,
 .portfolio-card.is-hovered .project-services,
 .portfolio-card.is-hovered .project-year {
-  color: #fcfbf7;
+  color: #ffffff;
 }
 
 .project-details,
@@ -226,5 +227,5 @@ body {
 
 .portfolio-card.is-hovered .project-details,
 .portfolio-card.is-hovered .project-year {
-  transform: translateY(8px);
+  transform: translateY(4px);
 }

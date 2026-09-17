@@ -193,20 +193,11 @@ export function ApplicationsSection({ banner, title }: Props) {
             />
           </div>
 
-          {/* 9. Red Title "Travel AMore" (Vertical Right in Stack -> Horizontal Centered in Collage) */}
-          <div
-            className="absolute transition-all duration-150 ease-out flex items-center justify-center"
-            style={{
-              left: `${lerp(69, 0)}%`,
-              top: `${lerp(30, 40)}%`,
-              width: `${lerp(30, 100)}%`,
-              transform: progress < 0.4 ? 'rotate(90deg)' : 'rotate(0deg)',
-              zIndex: 40,
-            }}
-          >
+          {/* 9. Red Title "Travel AMore" (Fixed Centered Position in background behind photos) */}
+          <div className="absolute left-0 top-[40%] w-full flex items-center justify-center z-0">
             <h2
               className="font-[family-name:var(--font-cabinet)] font-bold text-[#a71714] tracking-tight text-center whitespace-nowrap"
-              style={{ fontSize: `clamp(29.04px, ${lerp(4.235, 5.082)}vw, 67.76px)` }}
+              style={{ fontSize: 'clamp(29.04px, 5.082vw, 67.76px)' }}
             >
               {title}
             </h2>
