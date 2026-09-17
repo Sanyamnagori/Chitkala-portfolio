@@ -37,14 +37,14 @@ export function ApplicationsSection({ banner, title }: Props) {
   const lerp = (a: number, b: number) => a + (b - a) * progress
 
   return (
-    <div ref={trackRef} className="relative w-full h-[320vh] bg-white mt-12">
+    <div ref={trackRef} className="relative w-full h-[140vh] bg-white mt-12">
       {/* Sticky Viewport Container - Screen locks while scrolling */}
       <div className="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden bg-white">
-        <div className="relative mx-auto w-full max-w-[1340px] w-full aspect-[14/10] lg:aspect-[16/9] max-h-[90vh] px-4">
+        <div className="relative mx-auto w-full max-w-[1340px] aspect-[14/10] lg:aspect-[16/9] max-h-[90vh] px-4">
 
           {/* 1. Jacket */}
           <div
-            className="absolute overflow-hidden rounded-xl shadow-md transition-all duration-100 ease-out"
+            className="absolute overflow-hidden rounded-xl shadow-md"
             style={{
               left: `${lerp(12, 0)}%`,
               top: `${lerp(25, 0)}%`,
@@ -63,7 +63,7 @@ export function ApplicationsSection({ banner, title }: Props) {
 
           {/* 2. Mug */}
           <div
-            className="absolute overflow-hidden rounded-xl shadow-md transition-all duration-100 ease-out"
+            className="absolute overflow-hidden rounded-xl shadow-md"
             style={{
               left: `${lerp(34, 25.5)}%`,
               top: `${lerp(8, 0)}%`,
@@ -82,7 +82,7 @@ export function ApplicationsSection({ banner, title }: Props) {
 
           {/* 3. Sweater */}
           <div
-            className="absolute overflow-hidden rounded-xl shadow-md transition-all duration-150 ease-out"
+            className="absolute overflow-hidden rounded-xl shadow-md"
             style={{
               left: `${lerp(56, 51)}%`,
               top: `${lerp(16, 0)}%`,
@@ -101,7 +101,7 @@ export function ApplicationsSection({ banner, title }: Props) {
 
           {/* 4. Glass Bottle */}
           <div
-            className="absolute overflow-hidden rounded-xl shadow-md transition-all duration-150 ease-out"
+            className="absolute overflow-hidden rounded-xl shadow-md"
             style={{
               left: `${lerp(22, 76.5)}%`,
               top: `${lerp(64, 0)}%`,
@@ -120,7 +120,7 @@ export function ApplicationsSection({ banner, title }: Props) {
 
           {/* 5. Central Featured Black Tumbler */}
           <div
-            className="absolute overflow-hidden rounded-2xl shadow-2xl transition-all duration-150 ease-out"
+            className="absolute overflow-hidden rounded-2xl shadow-2xl"
             style={{
               left: `${lerp(35, 67.5)}%`,
               top: `${lerp(15, 52)}%`,
@@ -138,7 +138,7 @@ export function ApplicationsSection({ banner, title }: Props) {
 
           {/* 6. Green Passport Cover (Floating Overlapping Upper-Left of Tumbler) */}
           <div
-            className="absolute transition-all duration-150 ease-out"
+            className="absolute"
             style={{
               left: `${lerp(20, 13)}%`,
               top: `${lerp(10, 18)}%`,
@@ -157,7 +157,7 @@ export function ApplicationsSection({ banner, title }: Props) {
 
           {/* 7. Blue Baseball Cap (Floating Overlapping Upper-Right of Tumbler) */}
           <div
-            className="absolute transition-all duration-150 ease-out"
+            className="absolute"
             style={{
               left: `${lerp(54, 65)}%`,
               top: `${lerp(8, 15)}%`,
@@ -176,7 +176,7 @@ export function ApplicationsSection({ banner, title }: Props) {
 
           {/* 8. Gold Coin (Floating Overlapping Bottom-Right of Stack) */}
           <div
-            className="absolute transition-all duration-150 ease-out"
+            className="absolute"
             style={{
               left: `${lerp(68, 48)}%`,
               top: `${lerp(50, 15)}%`,
@@ -205,7 +205,7 @@ export function ApplicationsSection({ banner, title }: Props) {
 
           {/* 10. Sunset Hands-Heart Photo (Tucked Bottom Left -> Wide Bottom Left) */}
           <div
-            className="absolute overflow-hidden rounded-2xl shadow-lg transition-all duration-150 ease-out"
+            className="absolute overflow-hidden rounded-2xl shadow-lg"
             style={{
               left: `${lerp(16, 0)}%`,
               top: `${lerp(61, 52)}%`,

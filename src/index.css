@@ -196,7 +196,7 @@ body {
   width: 100%;
   overflow: hidden;
   background-color: #ffffff;
-  border: 1.5px solid var(--color-chitkala-red);
+  border: none;
   box-shadow: none;
   height: 280px;
 }
