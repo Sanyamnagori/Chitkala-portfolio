@@ -21,6 +21,15 @@ export const projects: Project[] = [
     color: '#b58a3f',
   },
   {
+    id: 'divya-jyot',
+    title: 'Divya Jyot',
+    year: '2026',
+    services: 'Logo Design, Brand Manual',
+    image: '/assets/projects/divya-jyot/hero.png',
+    borderRadius: 30,
+    color: '#BDAD63',
+  },
+  {
     id: 'creator-takeoff',
     title: 'Creator Takeoff Academy',
     year: '2026',

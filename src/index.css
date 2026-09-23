@@ -8,6 +8,7 @@
   --font-inter: 'Inter', system-ui, sans-serif;
   --font-bebas: 'Bebas Neue', cursive, sans-serif;
   --font-montserrat: 'Montserrat Alternates', sans-serif;
+  --font-poppins: 'Poppins', sans-serif;
 }
 
 :root {
@@ -87,6 +88,11 @@ body {
 
 #root {
   min-height: 100svh;
+}
+
+.dj-page {
+  container-type: inline-size;
+  container-name: dj;
 }
 
 .responsive-footer-logo {
