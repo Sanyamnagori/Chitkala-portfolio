@@ -38,9 +38,9 @@ export function ProjectCard({
       <div
         className="portfolio-card-header absolute top-0 left-0 w-full z-20 flex justify-between items-start transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]"
         style={{
-          height: isHovered ? '100%' : 'calc(120px * var(--card-scale, 1))',
+          height: isHovered ? '100%' : 'calc(150px * var(--card-scale, 1))',
           backgroundColor: isHovered ? 'transparent' : '#e34234',
-          padding: isHovered ? '2.5rem' : '20px 24px',
+          padding: isHovered ? '2.5rem' : '22px 24px',
           borderTopLeftRadius: radiusPx,
           borderTopRightRadius: radiusPx,
           borderBottomRightRadius: isHovered ? radiusPx : 0,
@@ -60,7 +60,7 @@ export function ProjectCard({
             {project.title}
           </h3>
           <p
-            className="font-[family-name:var(--font-cabinet)] font-normal text-white project-services mt-1 transition-colors duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]"
+            className="font-[family-name:var(--font-cabinet)] font-normal text-white project-services mt-1.5 transition-colors duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]"
             style={{ fontSize: 'calc(24.45px * var(--card-scale, 1))' }}
           >
             {project.services}
@@ -81,7 +81,7 @@ export function ProjectCard({
       <div
         className="portfolio-card-image absolute left-0 w-full z-10 overflow-hidden bg-white/0 transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]"
         style={{
-          top: isHovered ? 0 : 'calc(120px * var(--card-scale, 1))',
+          top: isHovered ? 0 : 'calc(150px * var(--card-scale, 1))',
           height: isHovered ? '100%' : 'calc(400px * var(--card-scale, 1))',
           borderBottomLeftRadius: radiusPx,
           borderBottomRightRadius: isHovered ? 0 : radiusPx,
