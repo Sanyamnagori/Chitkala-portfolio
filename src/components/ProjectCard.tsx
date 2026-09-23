@@ -34,17 +34,18 @@ export function ProjectCard({
         }}
       />
 
-      {/* Header (Red block in normal state, transparent on hover) */}
+      {/* Header (White block with red border & red text in normal state, transparent on hover) */}
       <div
         className="portfolio-card-header absolute top-0 left-0 w-full z-20 flex justify-between items-start transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]"
         style={{
           height: isHovered ? '100%' : 'calc(120px * var(--card-scale, 1))',
-          backgroundColor: isHovered ? 'transparent' : '#e34234',
+          backgroundColor: isHovered ? 'transparent' : '#ffffff',
           padding: isHovered ? '2.5rem' : '20px 24px',
           borderTopLeftRadius: radiusPx,
           borderTopRightRadius: radiusPx,
           borderBottomRightRadius: isHovered ? radiusPx : 0,
           borderBottomLeftRadius: 0,
+          border: isHovered ? '1.5px solid transparent' : '1.5px solid #e34234',
         }}
       >
         <div
@@ -54,20 +55,20 @@ export function ProjectCard({
           }}
         >
           <h3
-            className="font-[family-name:var(--font-cabinet)] font-bold leading-[1.15] text-white project-title transition-colors duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]"
+            className="font-[family-name:var(--font-cabinet)] font-bold leading-[1.15] text-chitkala-red project-title transition-colors duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]"
             style={{ fontSize: 'calc(39.55px * var(--card-scale, 1))' }}
           >
             {project.title}
           </h3>
           <p
-            className="font-[family-name:var(--font-cabinet)] font-normal text-white project-services mt-1 transition-colors duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]"
+            className="font-[family-name:var(--font-cabinet)] font-normal text-chitkala-red project-services mt-1 transition-colors duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]"
             style={{ fontSize: 'calc(24.45px * var(--card-scale, 1))' }}
           >
             {project.services}
           </p>
         </div>
         <span
-          className="shrink-0 font-[family-name:var(--font-cabinet)] font-medium text-white project-year transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]"
+          className="shrink-0 font-[family-name:var(--font-cabinet)] font-medium text-chitkala-red project-year transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]"
           style={{
             fontSize: 'calc(24.45px * var(--card-scale, 1))',
             transform: isHovered ? 'translateY(10px)' : 'translateY(0)',

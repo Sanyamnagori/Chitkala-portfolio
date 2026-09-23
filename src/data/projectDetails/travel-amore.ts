@@ -107,6 +107,7 @@ export const travelAmoreDetail: ProjectDetailContent = {
     instagram: 'https://instagram.com/aakanksha.monga',
     website: 'https://www.travelamore.club',
     image: `${assetBase}/founder.png`,
+    video: `${assetBase}/AM_Testimonial.mp4`,
   },
   nextProjects: [
     {

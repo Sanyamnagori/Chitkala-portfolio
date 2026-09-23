@@ -210,7 +210,7 @@ body {
 .project-title,
 .project-services,
 .project-year {
-  color: #ffffff;
+  color: #e34234;
   transition: color 700ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 

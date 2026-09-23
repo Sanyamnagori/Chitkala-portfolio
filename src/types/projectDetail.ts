@@ -55,6 +55,7 @@ export interface ProjectDetailFounder {
   instagram: string
   website: string
   image?: string
+  video?: string
 }
 
 export interface NextProjectPreview {

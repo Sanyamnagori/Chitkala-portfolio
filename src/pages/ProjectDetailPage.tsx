@@ -1,9 +1,12 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import { useParams, Link, useNavigate } from 'react-router-dom'
 import { getProjectDetail } from '../services/contentApi'
 import type { ProjectDetailContent } from '../types/projectDetail'
+import { projects } from '../data/projects'
 
 // Import components
+import { ProjectCard } from '../components/ProjectCard'
+import { Footer } from '../components/Footer'
 import { ProjectDetailHero } from '../components/project-detail/ProjectDetailHero'
 import { ProjectDetailMeta } from '../components/project-detail/ProjectDetailMeta'
 import { ProjectDetailQuote } from '../components/project-detail/ProjectDetailQuote'
@@ -15,11 +18,99 @@ import { TypographySection } from '../components/project-detail/TypographySectio
 import { ApplicationsSection } from '../components/project-detail/ApplicationsSection'
 import { ProjectNavbar } from '../components/project-detail/ProjectNavbar'
 
+function FounderTestimonialVideo({
+  src,
+  poster,
+}: {
+  src: string
+  poster?: string
+}) {
+  const videoRef = useRef<HTMLVideoElement | null>(null)
+
+  useEffect(() => {
+    const video = videoRef.current
+    if (!video) return
+
+    let wasIntersecting = false
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            if (!wasIntersecting) {
+              wasIntersecting = true
+              // Start from beginning and unmute when entering this section
+              video.currentTime = 0
+              video.muted = false
+
+              const playPromise = video.play()
+              if (playPromise !== undefined) {
+                playPromise.catch(() => {
+                  // Fallback if browser requires gesture before playing unmuted audio
+                  video.muted = true
+                  video.play().catch(() => {})
+
+                  const handleInteraction = () => {
+                    if (videoRef.current) {
+                      videoRef.current.muted = false
+                    }
+                    window.removeEventListener('click', handleInteraction)
+                    window.removeEventListener('touchstart', handleInteraction)
+                  }
+                  window.addEventListener('click', handleInteraction, { once: true })
+                  window.addEventListener('touchstart', handleInteraction, { once: true })
+                })
+              }
+            }
+          } else {
+            wasIntersecting = false
+            video.pause()
+          }
+        })
+      },
+      {
+        threshold: 0.3,
+      }
+    )
+
+    observer.observe(video)
+
+    return () => {
+      observer.disconnect()
+    }
+  }, [src])
+
+  return (
+    <video
+      ref={videoRef}
+      src={src}
+      poster={poster}
+      loop
+      controls
+      playsInline
+      preload="auto"
+      className="w-full max-w-[360px] rounded-2xl object-cover shadow-md bg-black"
+      style={{ maxHeight: '460px' }}
+    >
+      Your browser does not support the video tag.
+    </video>
+  )
+}
+
 export function ProjectDetailPage() {
   const { slug } = useParams<{ slug: string }>()
   const navigate = useNavigate()
   const [content, setContent] = useState<ProjectDetailContent | null>(null)
   const [loading, setLoading] = useState(true)
+  const [activeNextCard, setActiveNextCard] = useState<string | null>(null)
+
+  // Find current project index and retrieve next projects in cyclic order
+  const currentIndex = projects.findIndex((p) => p.id === slug)
+  const otherProjects = projects.filter((p) => p.id !== slug)
+  const nextProjectsList = [
+    projects[(currentIndex + 1) % projects.length] ?? otherProjects[0],
+    projects[(currentIndex + 2) % projects.length] ?? otherProjects[1],
+  ].filter((p): p is (typeof projects)[0] => Boolean(p && p.id !== slug))
 
   useEffect(() => {
     if (!slug) return
@@ -111,17 +202,22 @@ export function ProjectDetailPage() {
           style={{ paddingTop: '60px' }}
         >
           <div className="flex flex-col md:flex-row justify-between items-center gap-10">
-            {/* Left: Founder Portrait */}
-            {content.founder.image && (
-              <div className="w-full md:w-1/3 flex justify-center md:justify-start">
+            {/* Left: Founder Video / Portrait */}
+            <div className="w-full md:w-1/3 flex justify-center md:justify-start">
+              {content.founder.video ? (
+                <FounderTestimonialVideo
+                  src={content.founder.video}
+                  poster={content.founder.image}
+                />
+              ) : content.founder.image ? (
                 <img
                   src={content.founder.image}
                   alt={content.founder.name}
                   className="w-full max-w-[360px] rounded-2xl object-cover shadow-md"
                   style={{ maxHeight: '460px' }}
                 />
-              </div>
-            )}
+              ) : null}
+            </div>
 
             {/* Right: Founder Profile Details (Noticeably wider column) */}
             <div className="w-full md:w-2/3 flex flex-col items-center text-center justify-center max-w-[780px]">
@@ -174,10 +270,8 @@ export function ProjectDetailPage() {
       )}
 
       {/* 11. Next Projects Nav */}
-      {content.nextProjects && content.nextProjects.length > 0 && (
-        <section
-          className="mx-auto max-w-[1400px] mt-24 px-8"
-        >
+      {nextProjectsList.length > 0 && (
+        <section className="mx-auto max-w-[1400px] mt-24 px-8">
           <div className="w-full border-t-2 border-chitkala-red pt-6 mb-8 flex justify-between items-center">
             <h4
               className="font-[family-name:var(--font-cabinet)] font-bold text-chitkala-red uppercase tracking-wider"
@@ -185,77 +279,47 @@ export function ProjectDetailPage() {
             >
               NEXT PROJECT
             </h4>
-            <span
-              className="font-[family-name:var(--font-cabinet)] font-bold text-chitkala-red"
-              style={{ fontSize: '29.04px' }}
+            <Link
+              to="/"
+              className="inline-flex items-center gap-2 border border-chitkala-red bg-white px-5 py-2 rounded-full font-[family-name:var(--font-cabinet)] font-bold text-chitkala-red uppercase tracking-wider hover:bg-chitkala-red hover:text-white transition-all duration-200 text-sm md:text-base shadow-xs"
             >
-              &gt;&gt;&gt;&gt;&gt;&gt;
-            </span>
+              <span>VIEW ALL</span>
+              <span className="text-lg leading-none">+</span>
+            </Link>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {content.nextProjects.map((project, idx) => (
-              <Link
-                key={idx}
-                to={`/project/${project.slug}`}
-                className="portfolio-card relative w-full overflow-hidden block rounded-2xl bg-[#E0E0E0] shadow-sm hover:shadow-md transition-all duration-300"
-                style={{ height: '360px' }}
-              >
-                {/* Red Header Banner */}
-                <div className="bg-chitkala-red p-5 text-white flex justify-between items-start">
-                  <div>
-                    <h5
-                      className="font-[family-name:var(--font-cabinet)] font-bold leading-tight"
-                      style={{ fontSize: '24.2px' }}
-                    >
-                      {project.title}
-                    </h5>
-                    <p
-                      className="font-[family-name:var(--font-cabinet)] opacity-90 mt-1"
-                      style={{ fontSize: '16.94px' }}
-                    >
-                      {project.services}
-                    </p>
-                  </div>
-                  <span
-                    className="font-[family-name:var(--font-cabinet)] font-bold shrink-0 ml-2"
-                    style={{ fontSize: '21.78px' }}
-                  >
-                    {project.year}
-                  </span>
+          <div className="flex flex-col md:flex-row gap-5 w-full items-stretch">
+            {nextProjectsList.map((project) => {
+              const isHovered = activeNextCard === project.id
+              const isSiblingHovered =
+                activeNextCard !== null &&
+                activeNextCard !== project.id &&
+                nextProjectsList.some((p) => p.id === activeNextCard)
+
+              let flexClass = 'flex-1'
+              if (isHovered) flexClass = 'md:flex-[1.35] flex-1'
+              else if (isSiblingHovered) flexClass = 'md:flex-[0.65] flex-1'
+
+              return (
+                <div
+                  key={project.id}
+                  className={`w-full transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${flexClass}`}
+                >
+                  <ProjectCard
+                    project={project}
+                    isHovered={isHovered}
+                    onMouseEnter={() => setActiveNextCard(project.id)}
+                    onMouseLeave={() => setActiveNextCard(null)}
+                  />
                 </div>
-              </Link>
-            ))}
+              )
+            })}
           </div>
         </section>
       )}
 
       {/* 12. Footer Section */}
-      <footer className="w-full bg-white mt-24 py-12 px-8">
-        <div className="mx-auto max-w-[1400px] border-t-2 border-chitkala-red pt-8 flex flex-col items-center relative">
-          <div className="flex flex-col items-center">
-            <img
-              src="/assets/logo-header.svg"
-              alt="Chitkala"
-              width={160}
-              height={55}
-              style={{ width: '160px', height: 'auto' }}
-            />
-            <span
-              className="font-[family-name:var(--font-cabinet)] font-medium text-chitkala-red mt-1"
-              style={{ fontSize: '15.73px' }}
-            >
-              Where Thought Finds Form
-            </span>
-          </div>
-
-          <p
-            className="md:absolute md:right-0 md:bottom-0 mt-6 md:mt-0 font-[family-name:var(--font-cabinet)] font-normal text-chitkala-red text-sm"
-          >
-            © 2026 Studio Chitkala All rights reserved
-          </p>
-        </div>
-      </footer>
+      <Footer />
     </div>
   )
 }

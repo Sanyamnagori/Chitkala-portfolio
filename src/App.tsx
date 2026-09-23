@@ -4,6 +4,8 @@ import { Footer } from './components/Footer'
 import { Navbar } from './components/Navbar'
 import { ProjectGrid } from './components/ProjectGrid'
 import { ProjectDetailPage } from './pages/ProjectDetailPage'
+import { PrivacyPage } from './pages/PrivacyPage'
+import { TermsPage } from './pages/TermsPage'
 
 function Home() {
   return (
@@ -23,6 +25,8 @@ function App() {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/project/:slug" element={<ProjectDetailPage />} />
+      <Route path="/privacy" element={<PrivacyPage />} />
+      <Route path="/terms" element={<TermsPage />} />
     </Routes>
   )
 }
