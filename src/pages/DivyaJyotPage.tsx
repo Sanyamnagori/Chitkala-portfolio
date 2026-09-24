@@ -51,18 +51,7 @@ export function DivyaJyotPage() {
             alt="Divya Jyot"
             className="block h-auto w-full"
           />
-          <Link
-            to="/"
-            className="absolute font-[family-name:var(--font-cabinet)] font-medium text-[#2D2D2D] transition-opacity hover:opacity-70"
-            style={{
-              left: 'calc(80 / 1920 * 100%)',
-              top: 'calc(87 / 720 * 100%)',
-              fontSize: 'calc(39.56 / 1920 * 100cqw)',
-              lineHeight: 1.2,
-            }}
-          >
-            {'< Go Back'}
-          </Link>
+
           <h1
             className="absolute font-[family-name:var(--font-cabinet)] font-bold text-[#2D2D2D]"
             style={{
