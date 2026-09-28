@@ -43,9 +43,9 @@ export const projects: Project[] = [
     title: 'The Traveling Self',
     year: '2025',
     services: 'Design & Print Production',
-    image: '/assets/travel-amore.png',
+    image: '/assets/projects/traveling-self/hero.png',
     borderRadius: 30,
-    color: '#8e4a42',
+    color: '#D7A340',
   },
   {
     id: 'maisondoc',

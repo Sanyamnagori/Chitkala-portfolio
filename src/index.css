@@ -9,6 +9,8 @@
   --font-bebas: 'Bebas Neue', cursive, sans-serif;
   --font-montserrat: 'Montserrat Alternates', sans-serif;
   --font-poppins: 'Poppins', sans-serif;
+  --font-lato: 'Lato', sans-serif;
+  --font-roboto: 'Roboto', sans-serif;
 }
 
 :root {
@@ -93,6 +95,11 @@ body {
 .dj-page {
   container-type: inline-size;
   container-name: dj;
+}
+
+.ts-page {
+  container-type: inline-size;
+  container-name: ts;
 }
 
 .responsive-footer-logo {

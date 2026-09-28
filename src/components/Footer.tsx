@@ -1,6 +1,10 @@
 import { Link } from 'react-router-dom'
 
-export function Footer() {
+interface FooterProps {
+  showDivider?: boolean
+}
+
+export function Footer({ showDivider = true }: FooterProps) {
   return (
     <footer className="w-full bg-white" style={{ marginTop: '80px' }}>
       <div
@@ -8,11 +12,13 @@ export function Footer() {
         style={{ minHeight: '200px', paddingLeft: '110px', paddingRight: '110px' }}
       >
         <div className="relative flex w-full max-w-[1700px] flex-col items-center">
-          <div
-            className="absolute left-0 top-0 w-full bg-chitkala-red"
-            style={{ height: '3px' }}
-            aria-hidden="true"
-          />
+          {showDivider && (
+            <div
+              className="absolute left-0 top-0 w-full bg-chitkala-red"
+              style={{ height: '3px' }}
+              aria-hidden="true"
+            />
+          )}
 
           <Link to="/" className="inline-block transition-opacity hover:opacity-90">
             <img
