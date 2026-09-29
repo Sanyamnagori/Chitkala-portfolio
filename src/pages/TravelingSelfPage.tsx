@@ -1,5 +1,4 @@
 import { useEffect } from 'react'
-import { Link } from 'react-router-dom'
 import { Footer } from '../components/Footer'
 import { ProjectNavbar } from '../components/project-detail/ProjectNavbar'
 import { IssuesScrollSection } from '../components/project-detail/IssuesScrollSection'
@@ -11,14 +10,6 @@ Ll       Mm   Nn   Oo     Pp     Qq    Rr      Ss     Tt       Uu
 Vv      Ww  Xx     Yy      Zz
 
 1234567890!@#$%^&*()`
-
-const issues = [
-  { src: `${assets}/issue-5.png`, left: 160, top: 80, w: 329, h: 465 },
-  { src: `${assets}/issue-4.png`, left: 120, top: 60, w: 329, h: 465 },
-  { src: `${assets}/issue-3.png`, left: 80, top: 40, w: 330, h: 467 },
-  { src: `${assets}/issue-2.png`, left: 40, top: 20, w: 330, h: 467 },
-  { src: `${assets}/issue-1.png`, left: 0, top: 0, w: 330, h: 467 },
-]
 
 export function TravelingSelfPage() {
   useEffect(() => {
