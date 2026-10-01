@@ -451,24 +451,95 @@ The goal was to move away from visual noise and towards emotional clarity.`}
             />
           </div>
           <div
-            className="relative overflow-hidden"
+            className="flex flex-col md:flex-row items-center justify-between gap-10"
             style={{
               marginTop: 'calc(118 / 1920 * 100cqw)',
-              marginLeft: 'calc(10 / 1920 * 100cqw)',
-              width: 'calc(776 / 1920 * 100cqw)',
-              height: 'calc(855 / 1920 * 100cqw)',
-              backgroundColor: gold,
             }}
           >
-            <video
-              src={`${assets}/RLC Testimonial_Compressed.mp4`}
-              autoPlay
-              muted
-              loop
-              controls
-              playsInline
-              className="h-full w-full object-cover"
-            />
+            {/* Left: Video */}
+            <div
+              className="relative overflow-hidden rounded-2xl w-full md:w-[45%]"
+              style={{
+                height: 'calc(855 / 1920 * 100cqw)',
+                minHeight: '350px',
+                backgroundColor: gold,
+              }}
+            >
+              <video
+                src={`${assets}/RLC Testimonial_Compressed.mp4`}
+                autoPlay
+                muted
+                loop
+                controls
+                playsInline
+                className="h-full w-full object-cover"
+              />
+            </div>
+
+            {/* Right: Founder Profile Details & Testimonial Placeholder (Matching Travel AMore layout) */}
+            <div className="w-full md:w-[52%] flex flex-col items-center text-center justify-center px-4">
+              <h3
+                className="font-[family-name:var(--font-cabinet)] font-bold text-center"
+                style={{
+                  color: gold,
+                  fontSize: 'calc(43.56 / 1920 * 100cqw)',
+                  lineHeight: 1.2,
+                }}
+              >
+                Robert Louis-Charles
+              </h3>
+
+              <div
+                className="mt-6 space-y-4 font-[family-name:var(--font-cabinet)] font-medium text-white leading-relaxed text-center w-full"
+                style={{
+                  fontSize: 'calc(24.45 / 1920 * 100cqw)',
+                  lineHeight: 1.45,
+                }}
+              >
+                <p>
+                  "Working with Studio Chitkala to create The Traveling Self™ was an extraordinary experience. They took a complex, introspective concept and turned it into a visual masterpiece that deeply resonates with leaders worldwide."
+                </p>
+                <p>
+                  "Their mastery over layout, print production, and visual storytelling brought our vision to life beyond expectations."
+                </p>
+              </div>
+
+              {/* Social / Website Links */}
+              <div
+                className="mt-8 flex flex-wrap items-center justify-center gap-8 font-[family-name:var(--font-cabinet)] font-medium text-white"
+                style={{ fontSize: 'calc(20 / 1920 * 100cqw)' }}
+              >
+                <a
+                  href="https://instagram.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 hover:opacity-80 transition-opacity"
+                  style={{ color: gold }}
+                >
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" strokeWidth="2" />
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" strokeWidth="2" />
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" strokeWidth="2" strokeLinecap="round" />
+                  </svg>
+                  <span>robert.louischarles</span>
+                </a>
+
+                <a
+                  href="https://thetravelingself.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 hover:opacity-80 transition-opacity"
+                  style={{ color: gold }}
+                >
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="10" strokeWidth="2" />
+                    <line x1="2" y1="12" x2="22" y2="12" strokeWidth="2" />
+                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1 4-10z" strokeWidth="2" />
+                  </svg>
+                  <span>www.thetravelingself.com</span>
+                </a>
+              </div>
+            </div>
           </div>
         </section>
       </div>
