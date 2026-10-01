@@ -375,13 +375,24 @@ The goal was to move away from visual noise and towards emotional clarity.`}
             more love.
           </p>
           <div
+            className="relative overflow-hidden"
             style={{
               marginTop: 'calc(49 / 1920 * 100cqw)',
               width: '100%',
               height: 'calc(855 / 1920 * 100cqw)',
               backgroundColor: gold,
             }}
-          />
+          >
+            <video
+              src={`${assets}/Office Shoot Final_compressed.mp4`}
+              autoPlay
+              muted
+              loop
+              controls
+              playsInline
+              className="h-full w-full object-cover"
+            />
+          </div>
 
           <h2
             className="font-[family-name:var(--font-cabinet)] font-medium"
@@ -421,14 +432,26 @@ The goal was to move away from visual noise and towards emotional clarity.`}
             All visuals in this video were created with the help of AI.
           </p>
           <div
+            className="relative overflow-hidden"
             style={{
               marginTop: 'calc(49 / 1920 * 100cqw)',
               width: '100%',
               height: 'calc(855 / 1920 * 100cqw)',
               backgroundColor: gold,
             }}
-          />
+          >
+            <video
+              src={`${assets}/The Traveling Self_RLC voice_Final_Compressed.mp4`}
+              autoPlay
+              muted
+              loop
+              controls
+              playsInline
+              className="h-full w-full object-cover"
+            />
+          </div>
           <div
+            className="relative overflow-hidden"
             style={{
               marginTop: 'calc(118 / 1920 * 100cqw)',
               marginLeft: 'calc(10 / 1920 * 100cqw)',
@@ -436,7 +459,17 @@ The goal was to move away from visual noise and towards emotional clarity.`}
               height: 'calc(855 / 1920 * 100cqw)',
               backgroundColor: gold,
             }}
-          />
+          >
+            <video
+              src={`${assets}/RLC Testimonial_Compressed.mp4`}
+              autoPlay
+              muted
+              loop
+              controls
+              playsInline
+              className="h-full w-full object-cover"
+            />
+          </div>
         </section>
       </div>
 
