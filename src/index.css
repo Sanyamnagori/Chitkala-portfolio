@@ -102,6 +102,12 @@ body {
   container-name: ts;
 }
 
+.vi-page {
+  container-type: inline-size;
+  container-name: vi;
+  overflow-x: clip;
+}
+
 .responsive-footer-logo {
   width: 300px;
   height: 100px;

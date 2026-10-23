@@ -74,6 +74,15 @@ export const projects: Project[] = [
     borderRadius: 20,
     color: '#a6242c',
   },
+  {
+    id: 'vatsalya',
+    title: 'Vatsalya International Pre school',
+    year: '2026',
+    services: 'Complete Branding & Creative Services',
+    image: '/assets/projects/vatsalya/hero.png',
+    borderRadius: 30,
+    color: '#E34234',
+  },
 ]
 
 export const filterTags = {
