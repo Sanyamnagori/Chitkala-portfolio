@@ -75,6 +75,15 @@ export const projects: Project[] = [
     color: '#a6242c',
   },
   {
+    id: 'impulse-new-delhi',
+    title: 'Impulse New Delhi',
+    year: '2026',
+    services: 'Complete Branding & Creative Services',
+    image: '/assets/projects/impulse/hero.png',
+    borderRadius: 30,
+    color: '#E34234',
+  },
+  {
     id: 'vatsalya',
     title: 'Vatsalya International Pre school',
     year: '2026',

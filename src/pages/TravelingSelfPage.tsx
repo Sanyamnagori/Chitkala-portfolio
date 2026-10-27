@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { Footer } from '../components/Footer'
 import { ProjectNavbar } from '../components/project-detail/ProjectNavbar'
 import { IssuesScrollSection } from '../components/project-detail/IssuesScrollSection'
+import { FounderTestimonialVideo } from '../components/project-detail/FounderTestimonialVideo'
 
 const assets = '/assets/projects/traveling-self'
 const gold = '#D7A340'
@@ -450,34 +451,28 @@ The goal was to move away from visual noise and towards emotional clarity.`}
               className="h-full w-full object-cover"
             />
           </div>
+        </section>
+
+        {/* Founder Testimonial Section - Dedicated Full Screen View with Generous Whitespace */}
+        <section
+          className="w-full min-h-screen flex flex-col justify-center items-center py-28 md:py-36 lg:py-48"
+          style={{
+            paddingLeft: 'calc(80 / 1920 * 100%)',
+            paddingRight: 'calc(80 / 1920 * 100%)',
+          }}
+        >
           <div
-            className="flex flex-col md:flex-row items-center justify-between gap-10"
-            style={{
-              marginTop: 'calc(118 / 1920 * 100cqw)',
-            }}
+            className="w-full flex flex-col md:flex-row items-center justify-center gap-10 md:gap-14 lg:gap-20"
           >
             {/* Left: Video */}
-            <div
-              className="relative overflow-hidden rounded-2xl w-full md:w-[45%]"
-              style={{
-                height: 'calc(855 / 1920 * 100cqw)',
-                minHeight: '350px',
-                backgroundColor: gold,
-              }}
-            >
-              <video
+            <div className="shrink-0 flex justify-center" style={{ width: '363px', maxWidth: '100%' }}>
+              <FounderTestimonialVideo
                 src={`${assets}/RLC Testimonial_Compressed.mp4`}
-                autoPlay
-                muted
-                loop
-                controls
-                playsInline
-                className="h-full w-full object-cover"
               />
             </div>
 
             {/* Right: Founder Profile Details & Testimonial Placeholder (Matching Travel AMore layout) */}
-            <div className="w-full md:w-[52%] flex flex-col items-center text-center justify-center px-4">
+            <div className="w-full md:flex-1 flex flex-col items-center text-center justify-center max-w-[780px] px-4">
               <h3
                 className="font-[family-name:var(--font-cabinet)] font-bold text-center"
                 style={{

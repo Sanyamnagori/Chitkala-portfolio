@@ -85,16 +85,18 @@ export function IssuesScrollSection() {
           className="relative w-full max-w-[1856px] h-[450px] md:h-[520px] lg:h-[580px] flex items-center justify-between"
         >
           {issuesData.map((issue, index) => {
-            // Calculate base spread layout (p = 1)
-            // 5 items across container width: gap is ~16px
+            // Calculate base spread layout (p = 1) starting from the left
             const gap = 16
             const cardWidth = Math.max((containerWidth - 4 * gap) / 5, 140)
             const spreadLeft = index * (cardWidth + gap)
 
-            // Stacked layout (p = 0)
+            // Stacked layout (p = 0) anchored to the left like earlier
             const stackedLeft = index * 36
             const stackedTop = index * 18
-            const stackedZIndex = 10 - index
+
+            // Constant z-index: Card 0 (Issue I) remains on top, cascading down to Card 4
+            // Fixes the bug where cards awkwardly jumped above each other mid-scroll
+            const cardZIndex = 10 - index
 
             // GPU translation delta from spread position to current interpolated position
             const deltaX = (stackedLeft - spreadLeft) * (1 - easeP)
@@ -111,7 +113,7 @@ export function IssuesScrollSection() {
                   left: `${spreadLeft}px`,
                   top: '50%',
                   marginTop: `-${(cardWidth * (467 / 330)) / 2}px`,
-                  zIndex: progress > 0.5 ? index + 1 : stackedZIndex,
+                  zIndex: cardZIndex,
                   transform: `translate3d(${deltaX}px, ${deltaY}px, 0)`,
                   willChange: 'transform',
                   boxShadow: '0 12px 32px -6px rgba(0, 0, 0, 0.28)',

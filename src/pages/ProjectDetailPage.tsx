@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from 'react'
+import { useEffect, useState } from 'react'
 import { useParams, Link, useNavigate } from 'react-router-dom'
 import { getProjectDetail } from '../services/contentApi'
 import type { ProjectDetailContent } from '../types/projectDetail'
@@ -17,85 +17,7 @@ import { TypographySection } from '../components/project-detail/TypographySectio
 
 import { ApplicationsSection } from '../components/project-detail/ApplicationsSection'
 import { ProjectNavbar } from '../components/project-detail/ProjectNavbar'
-
-function FounderTestimonialVideo({
-  src,
-  poster,
-}: {
-  src: string
-  poster?: string
-}) {
-  const videoRef = useRef<HTMLVideoElement | null>(null)
-
-  useEffect(() => {
-    const video = videoRef.current
-    if (!video) return
-
-    let wasIntersecting = false
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            if (!wasIntersecting) {
-              wasIntersecting = true
-              // Start from beginning and unmute when entering this section
-              video.currentTime = 0
-              video.muted = false
-
-              const playPromise = video.play()
-              if (playPromise !== undefined) {
-                playPromise.catch(() => {
-                  // Fallback if browser requires gesture before playing unmuted audio
-                  video.muted = true
-                  video.play().catch(() => {})
-
-                  const handleInteraction = () => {
-                    if (videoRef.current) {
-                      videoRef.current.muted = false
-                    }
-                    window.removeEventListener('click', handleInteraction)
-                    window.removeEventListener('touchstart', handleInteraction)
-                  }
-                  window.addEventListener('click', handleInteraction, { once: true })
-                  window.addEventListener('touchstart', handleInteraction, { once: true })
-                })
-              }
-            }
-          } else {
-            wasIntersecting = false
-            video.pause()
-          }
-        })
-      },
-      {
-        threshold: 0.3,
-      }
-    )
-
-    observer.observe(video)
-
-    return () => {
-      observer.disconnect()
-    }
-  }, [src])
-
-  return (
-    <video
-      ref={videoRef}
-      src={src}
-      poster={poster}
-      loop
-      controls
-      playsInline
-      preload="auto"
-      className="w-full max-w-[360px] rounded-2xl object-cover shadow-md bg-black"
-      style={{ maxHeight: '460px' }}
-    >
-      Your browser does not support the video tag.
-    </video>
-  )
-}
+import { FounderTestimonialVideo } from '../components/project-detail/FounderTestimonialVideo'
 
 export function ProjectDetailPage() {
   const { slug } = useParams<{ slug: string }>()
@@ -198,12 +120,11 @@ export function ProjectDetailPage() {
       {/* 10. Founder Profile & Bio */}
       {content.founder && (
         <section
-          className="mx-auto max-w-[1400px] mt-24 px-8"
-          style={{ paddingTop: '60px' }}
+          className="mx-auto max-w-[1400px] min-h-screen flex flex-col justify-center items-center px-8 py-28 md:py-36 lg:py-48"
         >
-          <div className="flex flex-col md:flex-row justify-between items-center gap-10">
+          <div className="w-full flex flex-col md:flex-row justify-center items-center gap-10 md:gap-14 lg:gap-20">
             {/* Left: Founder Video / Portrait */}
-            <div className="w-full md:w-1/3 flex justify-center md:justify-start">
+            <div className="shrink-0 flex justify-center" style={{ width: '363px', maxWidth: '100%' }}>
               {content.founder.video ? (
                 <FounderTestimonialVideo
                   src={content.founder.video}
@@ -213,14 +134,20 @@ export function ProjectDetailPage() {
                 <img
                   src={content.founder.image}
                   alt={content.founder.name}
-                  className="w-full max-w-[360px] rounded-2xl object-cover shadow-md"
-                  style={{ maxHeight: '460px' }}
+                  className="block object-cover"
+                  style={{
+                    width: '363px',
+                    height: '455px',
+                    maxWidth: '100%',
+                    borderRadius: 0,
+                    boxShadow: 'none',
+                  }}
                 />
               ) : null}
             </div>
 
             {/* Right: Founder Profile Details (Noticeably wider column) */}
-            <div className="w-full md:w-2/3 flex flex-col items-center text-center justify-center max-w-[780px]">
+            <div className="w-full md:flex-1 flex flex-col items-center text-center justify-center max-w-[780px]">
               <h3
                 className="font-[family-name:var(--font-cabinet)] font-bold text-chitkala-red text-center"
                 style={{ fontSize: '43.56px' }}
