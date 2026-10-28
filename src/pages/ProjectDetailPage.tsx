@@ -82,6 +82,7 @@ export function ProjectDetailPage() {
       {/* Navbar */}
       <ProjectNavbar />
 
+      <div className="ta-page mx-auto w-full max-w-[1920px]">
       {/* 1. Hero Cover & Title */}
       <ProjectDetailHero content={content.hero} />
 
@@ -120,7 +121,11 @@ export function ProjectDetailPage() {
       {/* 10. Founder Profile & Bio */}
       {content.founder && (
         <section
-          className="mx-auto max-w-[1400px] min-h-screen flex flex-col justify-center items-center px-8 py-28 md:py-36 lg:py-48"
+          className="mx-auto w-full max-w-[1920px] min-h-screen flex flex-col justify-center items-center py-28 md:py-36 lg:py-48"
+          style={{
+            paddingLeft: "calc(80 / 1920 * 100%)",
+            paddingRight: "calc(80 / 1920 * 100%)",
+          }}
         >
           <div className="w-full flex flex-col md:flex-row justify-center items-center gap-10 md:gap-14 lg:gap-20">
             {/* Left: Founder Video / Portrait */}
@@ -196,9 +201,11 @@ export function ProjectDetailPage() {
         </section>
       )}
 
+      </div>
+
       {/* 11. Next Projects Nav */}
       {nextProjectsList.length > 0 && (
-        <section className="mx-auto max-w-[1400px] mt-24 px-8">
+        <section className="mx-auto w-full max-w-[1920px] mt-24 px-8 md:px-[calc(80/1920*100%)]">
           <div className="w-full border-t-2 border-chitkala-red pt-6 mb-8 flex justify-between items-center">
             <h4
               className="font-[family-name:var(--font-cabinet)] font-bold text-chitkala-red uppercase tracking-wider"

@@ -7,55 +7,85 @@ interface Props {
 export function ProjectDetailMeta({ content }: Props) {
   return (
     <section
-      className="mx-auto grid max-w-[1400px] gap-8 md:grid-cols-2 px-8"
-      style={{ paddingTop: '48px' }}
+      className="mx-auto w-full max-w-[1920px] grid grid-cols-1 lg:grid-cols-[718fr_267fr_775fr]"
+      style={{
+        paddingLeft: 'calc(80 / 1920 * 100%)',
+        paddingRight: 'calc(80 / 1920 * 100%)',
+        paddingTop: 'calc(69 / 1920 * 100cqw)',
+      }}
     >
       <div>
         <p
           className="font-[family-name:var(--font-cabinet)] font-medium text-chitkala-dark-red"
-          style={{ fontSize: '38.72px' }}
+          style={{ fontSize: 'calc(39.56 / 1920 * 100cqw)', lineHeight: 1.21 }}
         >
           {content.category}
         </p>
 
         <p
-          className="mt-[36px] font-[family-name:var(--font-cabinet)] font-bold text-chitkala-red uppercase tracking-wider"
-          style={{ fontSize: '26.62px' }}
+          className="font-[family-name:var(--font-cabinet)] font-medium text-chitkala-red uppercase tracking-wider"
+          style={{
+            marginTop: 'calc(60 / 1920 * 100cqw)',
+            fontSize: 'calc(39.56 / 1920 * 100cqw)',
+            lineHeight: 1.21,
+          }}
         >
           {content.essenceLabel}
         </p>
 
         <p
-          className="mt-[12px] max-w-[690px] font-[family-name:var(--font-cabinet)] font-medium leading-[1.5] text-[#2D2D2D]"
-          style={{ fontSize: '20.57px', textAlign: 'justify', wordSpacing: '0.08em' }}
+          className="font-[family-name:var(--font-cabinet)] font-medium text-[#2D2D2D]"
+          style={{
+            marginTop: 'calc(20 / 1920 * 100cqw)',
+            fontSize: 'calc(24.45 / 1920 * 100cqw)',
+            lineHeight: 1.36,
+            textAlign: 'justify',
+          }}
         >
           {content.essence}
         </p>
       </div>
 
-      <div className="md:pl-12">
+      <div className="hidden lg:block" />
+
+      <div
+        className="mt-8 lg:mt-0"
+        style={{ paddingTop: 'calc(108 / 1920 * 100cqw)' }}
+      >
         <p
-          className="font-[family-name:var(--font-cabinet)] font-bold text-chitkala-red uppercase tracking-wider"
-          style={{ fontSize: '26.62px' }}
+          className="font-[family-name:var(--font-cabinet)] font-medium text-chitkala-red uppercase tracking-wider"
+          style={{ fontSize: 'calc(39.56 / 1920 * 100cqw)', lineHeight: 1.21 }}
         >
           {content.industryLabel}
         </p>
         <p
-          className="mt-[12px] font-[family-name:var(--font-cabinet)] font-medium text-[#2D2D2D]"
-          style={{ fontSize: '20.57px' }}
+          className="font-[family-name:var(--font-cabinet)] font-medium text-[#2D2D2D]"
+          style={{
+            marginTop: 'calc(20 / 1920 * 100cqw)',
+            fontSize: 'calc(24.45 / 1920 * 100cqw)',
+            lineHeight: 1.19,
+          }}
         >
           {content.industry}
         </p>
 
         <p
-          className="mt-[36px] font-[family-name:var(--font-cabinet)] font-bold text-chitkala-red uppercase tracking-wider"
-          style={{ fontSize: '26.62px' }}
+          className="font-[family-name:var(--font-cabinet)] font-medium text-chitkala-red uppercase tracking-wider"
+          style={{
+            marginTop: 'calc(106 / 1920 * 100cqw)',
+            fontSize: 'calc(39.56 / 1920 * 100cqw)',
+            lineHeight: 1.21,
+          }}
         >
           {content.scopeLabel}
         </p>
         <p
-          className="mt-[12px] font-[family-name:var(--font-cabinet)] font-medium text-[#2D2D2D]"
-          style={{ fontSize: '20.57px' }}
+          className="font-[family-name:var(--font-cabinet)] font-medium text-[#2D2D2D]"
+          style={{
+            marginTop: 'calc(20 / 1920 * 100cqw)',
+            fontSize: 'calc(24.45 / 1920 * 100cqw)',
+            lineHeight: 1.19,
+          }}
         >
           {content.scope}
         </p>

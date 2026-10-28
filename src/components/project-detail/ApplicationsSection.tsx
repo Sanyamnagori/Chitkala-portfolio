@@ -42,7 +42,7 @@ export function ApplicationsSection({ banner, title }: Props) {
     <div ref={trackRef} className="relative w-full h-[115vh] bg-white mt-12">
       {/* Sticky Viewport Container - Screen locks while scrolling */}
       <div className="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden bg-white">
-        <div className="relative mx-auto w-full max-w-[1340px] aspect-[14/10] lg:aspect-[16/9] max-h-[90vh] px-4">
+        <div className="relative mx-auto w-full max-w-[1760px] aspect-[14/10] lg:aspect-[16/9] max-h-[90vh] px-4">
 
           {/* 1. Jacket */}
           <div

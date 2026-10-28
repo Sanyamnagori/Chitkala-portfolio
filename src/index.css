@@ -97,6 +97,11 @@ body {
   container-name: dj;
 }
 
+.ta-page {
+  container-type: inline-size;
+  container-name: ta;
+}
+
 .ts-page {
   container-type: inline-size;
   container-name: ts;

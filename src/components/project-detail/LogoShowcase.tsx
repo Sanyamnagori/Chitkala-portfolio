@@ -6,14 +6,17 @@ interface Props {
 export function LogoShowcase({ image, alt = 'Logo showcase' }: Props) {
   return (
     <section
-      className="mx-auto max-w-[1400px] px-6"
-      style={{ paddingTop: '48px' }}
+      className="mx-auto w-full max-w-[1920px]"
+      style={{
+        paddingLeft: 'calc(80 / 1920 * 100%)',
+        paddingRight: 'calc(80 / 1920 * 100%)',
+        paddingTop: 'calc(60 / 1920 * 100cqw)',
+      }}
     >
       <img
         src={image}
         alt={alt}
-        className="w-full rounded-none object-cover"
-        style={{ maxHeight: '340px', objectFit: 'cover' }}
+        className="w-full h-auto object-cover rounded-none block"
       />
     </section>
   )

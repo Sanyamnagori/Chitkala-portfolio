@@ -11,11 +11,11 @@ export function ProjectDetailHero({ content }: Props) {
         <img
           src={content.coverImage}
           alt={content.title}
-          className="w-full max-w-full h-auto object-contain block"
+          className="w-full max-w-full h-auto object-cover block"
         />
       </div>
       <div
-        className="absolute bottom-0 left-0 right-0 mx-auto w-full max-w-[1400px] px-8 pb-12 md:pb-16"
+        className="absolute bottom-0 left-0 right-0 mx-auto w-full max-w-[1920px] px-8 md:px-[calc(80/1920*100%)] pb-12 md:pb-16"
       >
         <h1
           className="font-[family-name:var(--font-cabinet)] font-bold text-white tracking-tight drop-shadow-md"
@@ -27,4 +27,3 @@ export function ProjectDetailHero({ content }: Props) {
     </section>
   )
 }
-
