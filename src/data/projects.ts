@@ -95,8 +95,8 @@ export const projects: Project[] = [
 ]
 
 export const filterTags = {
-  row1: ['ALL', 'ECOMMERCE', 'FOOD & BEVERAGE', 'ENTERTAINMENT'],
-  row2: ['TECH', 'INDUSTRIAL', 'TRAVEL', 'SEE MORE'],
+  row1: ['All', 'Ecommerce', 'Food & Beverage', 'Entertainment'],
+  row2: ['Tech', 'Industrial', 'Travel', 'See More'],
 } as const
 
 export const navLinks = [

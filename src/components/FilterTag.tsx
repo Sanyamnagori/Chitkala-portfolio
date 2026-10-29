@@ -11,7 +11,7 @@ export function FilterTag({ label, active = false, width }: FilterTagProps) {
     <button
       type="button"
       className={[
-        'responsive-filter-tag inline-flex shrink-0 items-center justify-center font-[family-name:var(--font-cabinet)] font-normal uppercase whitespace-nowrap transition-all duration-200',
+        'responsive-filter-tag inline-flex shrink-0 items-center justify-center font-[family-name:var(--font-cabinet)] font-normal whitespace-nowrap transition-all duration-200',
         active
           ? 'bg-chitkala-red text-white'
           : 'border border-chitkala-red bg-white text-chitkala-red hover:bg-chitkala-red hover:text-white',
