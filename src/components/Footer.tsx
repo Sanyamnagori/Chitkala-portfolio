@@ -6,12 +6,9 @@ interface FooterProps {
 
 export function Footer({ showDivider = true }: FooterProps) {
   return (
-    <footer className="w-full bg-white" style={{ marginTop: '80px' }}>
-      <div
-        className="responsive-footer mx-auto flex max-w-[1920px] flex-col items-center"
-        style={{ minHeight: '200px', paddingLeft: '110px', paddingRight: '110px' }}
-      >
-        <div className="relative flex w-full max-w-[1700px] flex-col items-center">
+    <footer className="w-full bg-white mt-20 md:mt-28">
+      <div className="mx-auto flex w-full max-w-[1920px] flex-col items-center px-5 md:px-10 lg:px-[80px]">
+        <div className="relative flex w-full flex-col items-center">
           {showDivider && (
             <div
               className="absolute left-0 top-0 w-full bg-chitkala-red"

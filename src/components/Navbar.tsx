@@ -4,8 +4,8 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-50 w-full bg-chitkala-red">
       <div
-        className="responsive-nav mx-auto flex max-w-[1920px] items-center justify-between"
-        style={{ height: '90px', paddingLeft: '80px', paddingRight: '80px' }}
+        className="mx-auto flex max-w-[1920px] items-center justify-between px-5 md:px-10 lg:px-[80px]"
+        style={{ height: '90px' }}
       >
         <a href="#" className="flex shrink-0 flex-col items-start">
           <img

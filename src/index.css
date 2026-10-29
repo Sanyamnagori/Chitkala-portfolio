@@ -14,60 +14,60 @@
 }
 
 :root {
-  --scale-factor: 0.55;
-  --tag-height: 48px;
-  --tag-radius: 15px;
-  --tag-font-size: 18px;
-  --tag-padding: 18px;
-  --filter-gap: 16px;
-  --card-scale: 0.75;
+  --scale-factor: 0.68;
+  --tag-height: 56px;
+  --tag-radius: 18px;
+  --tag-font-size: 20px;
+  --tag-padding: 20px;
+  --filter-gap: 20px;
+  --card-scale: 0.95;
 }
 
 @media (max-width: 1919px) {
   :root {
-    --scale-factor: 0.48;
-    --tag-height: 44px;
-    --tag-radius: 14px;
-    --tag-font-size: 16px;
-    --tag-padding: 16px;
-    --filter-gap: 14px;
-    --card-scale: 0.7;
+    --scale-factor: 0.58;
+    --tag-height: 50px;
+    --tag-radius: 16px;
+    --tag-font-size: 18px;
+    --tag-padding: 18px;
+    --filter-gap: 16px;
+    --card-scale: 0.85;
   }
 }
 
 @media (max-width: 1599px) {
   :root {
-    --scale-factor: 0.42;
-    --tag-height: 38px;
-    --tag-radius: 12px;
-    --tag-font-size: 15px;
-    --tag-padding: 14px;
-    --filter-gap: 12px;
-    --card-scale: 0.62;
+    --scale-factor: 0.5;
+    --tag-height: 44px;
+    --tag-radius: 14px;
+    --tag-font-size: 16px;
+    --tag-padding: 16px;
+    --filter-gap: 14px;
+    --card-scale: 0.75;
   }
 }
 
 @media (max-width: 1365px) {
   :root {
-    --scale-factor: 0.36;
-    --tag-height: 34px;
-    --tag-radius: 10px;
-    --tag-font-size: 14px;
-    --tag-padding: 10px;
-    --filter-gap: 10px;
-    --card-scale: 0.55;
+    --scale-factor: 0.42;
+    --tag-height: 38px;
+    --tag-radius: 12px;
+    --tag-font-size: 15px;
+    --tag-padding: 12px;
+    --filter-gap: 12px;
+    --card-scale: 0.68;
   }
 }
 
 @media (max-width: 1023px) {
   :root {
-    --scale-factor: 0.32;
-    --tag-height: 30px;
-    --tag-radius: 8px;
-    --tag-font-size: 12px;
-    --tag-padding: 8px;
-    --filter-gap: 8px;
-    --card-scale: 0.48;
+    --scale-factor: 0.35;
+    --tag-height: 34px;
+    --tag-radius: 10px;
+    --tag-font-size: 13px;
+    --tag-padding: 10px;
+    --filter-gap: 10px;
+    --card-scale: 0.58;
   }
 }
 
